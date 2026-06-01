@@ -89,6 +89,23 @@
             </svg>
           </router-link>
         </div>
+
+        <!-- Login / Dashboard Button -->
+        <router-link
+          v-if="!isLoggedIn"
+          to="/login"
+          class="inline-flex items-center gap-2 border border-gray-300 text-gray-900 px-5 py-2.5 rounded-full text-sm font-semibold hover:border-brand-red hover:text-brand-red transition"
+        >
+          Login
+        </router-link>
+
+        <router-link
+          v-else
+          to="/dashboard"
+          class="inline-flex items-center gap-2 bg-brand-red text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-red-700 transition"
+        >
+          Dashboard
+        </router-link>   
      </div>
     </nav>
 
@@ -108,7 +125,7 @@
 
 
         <!-- Mobile Action Footer -->
-        <div class="flex flex-col gap-4 pt-8 border-t border-white/10">
+        <!-- <div class="flex flex-col gap-4 pt-8 border-t border-white/10">
           <router-link 
             @click="closeMobileMenu"
             to="/contact" 
@@ -119,7 +136,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
             </svg>
           </router-link>
-        </div>
+        </div> -->
       </div>
     </transition>
   </header>
@@ -129,6 +146,13 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 import UtilityBar from './UtilityBar.vue';
 import logo from '@/assets/images/leadx-logo.png'
+import { auth } from '@/utils/apiClient'
+import { computed } from 'vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+const isLoggedIn = computed(() => auth.isAuthenticated())
 
 const isScrolled = ref(false);
 const mobileMenuOpen = ref(false);

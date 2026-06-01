@@ -5,7 +5,7 @@
       <div class="flex items-center gap-2 select-none">
         <!-- Phone Link -->
         <a 
-          href="tel:8665435323" 
+          href="tel:0312-3456789" 
           class="flex items-center gap-1.5 hover:text-white transition-colors duration-200"
           title="Call LeadX Support"
         >
@@ -14,7 +14,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.387a20.373 20.373 0 0 1-7.708-7.708c-.154-.44.01-1.21.387-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
             </svg>
           </span>
-          <span class="font-semibold tabular-nums">866.543.LEAD</span>
+          <span class="font-semibold tabular-nums">0312-3456789</span>
         </a>
         <!-- Divider -->
         <span class="w-px h-3 bg-white/10 hidden sm:inline-block"></span>

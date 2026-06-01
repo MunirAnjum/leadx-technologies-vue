@@ -41,13 +41,13 @@
                 </div>
                 <div>
                   <strong class="text-white block font-semibold text-base mb-0.5">LeadX Technologies Inc.</strong>
-                  <span>6640 Carothers Pkwy, Suite 150</span>
-                  <span class="block">Franklin, TN 37067</span>
+                  <span>LeadX Technologies, Jhardiyan Road, Nawansher</span>
+                  <span class="block">Abbottabad, KPK, Pakistan</span>
                 </div>
               </div>
 
               <!-- Phone number block -->
-              <a href="tel:8665435323" class="flex items-start gap-4 group focus:outline-none focus:text-white">
+              <a href="tel:0312-3456789" class="flex items-start gap-4 group focus:outline-none focus:text-white">
                 <div class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-brand-red group-hover:bg-brand-red group-hover:text-white transition-all duration-300 flex-shrink-0">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 9.75v-4.5m0 4.5h4.5m-4.5 0 6-6m-3 10.5a8.25 8.25 0 0 0-16.5 0c0 4.556 3.694 8.25 8.25 8.25a8.25 8.25 0 0 0 8.25-8.25Z" />
@@ -55,7 +55,7 @@
                 </div>
                 <div>
                   <strong class="text-white block font-semibold text-base mb-0.5">Direct Inquiry Line</strong>
-                  <span class="group-hover:underline text-sm font-semibold tabular-nums">866.543.LEAD (5323)</span>
+                  <span class="group-hover:underline text-sm font-semibold tabular-nums">0312-3456789</span>
                 </div>
               </a>
 
@@ -281,13 +281,14 @@ const handleSubmit = async () => {
 
 };
 
-// const resetForm = () => {
-//   submitted.value = false;
-//   formData.name = '';
-//   formData.email = '';
-//   formData.company = '';
-//   formData.message = '';
-// };
+const resetForm = () => {
+  submitted.value = false;
+  formData.name = '';
+  formData.email = '';
+  formData.company = '';
+  formData.message = '';
+};
+
 </script>
 
 <style scoped>

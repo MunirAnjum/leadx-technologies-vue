@@ -74,19 +74,19 @@
           <address class="not-italic text-sm text-brand-gray flex flex-col gap-4">
             <div>
               <strong class="text-white block font-medium">LeadX Technologies Inc.</strong>
-              <span class="block mt-1">6640 Carothers Pkwy, Suite 150</span>
-              <span class="block">Franklin, TN 37067</span>
+              <span class="block mt-1">LeadX Technologies, Jhardiyan Road, Nawansher</span>
+              <span class="block">Abbottabad, KPK, Pakistan</span>
             </div>
 
             <!-- Phone Link -->
             <a 
-              href="tel:8665435323" 
+              href="tel:0312-3456789" 
               class="flex items-center gap-2 hover:text-white transition-colors duration-200 w-fit focus:outline-none focus:text-white"
             >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-brand-red flex-shrink-0">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 9.75v-4.5m0 4.5h4.5m-4.5 0 6-6m-3 10.5a8.25 8.25 0 0 0-16.5 0c0 4.556 3.694 8.25 8.25 8.25a8.25 8.25 0 0 0 8.25-8.25Z" />
               </svg>
-              <span class="tabular-nums font-semibold hover:underline">866.543.LEAD</span>
+              <span class="tabular-nums font-semibold hover:underline">0312-3456789</span>
             </a>
 
             <!-- Email Link -->
