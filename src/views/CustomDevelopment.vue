@@ -17,9 +17,7 @@
           class="inline-flex items-center gap-2 bg-brand-red text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-red-700 hover:shadow-lg hover:shadow-brand-red/20 active:scale-95 transition-all duration-200 mt-4"
         >
           Start Your Project
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-          </svg>
+          <ArrowRight class="w-4 h-4"/>
         </router-link>
       </div>
       <!-- Pillars -->
@@ -58,9 +56,7 @@
             <p class="text-brand-gray text-sm sm:text-base leading-relaxed">{{ s.desc }}</p>
             <ul class="flex flex-col gap-3.5 text-sm text-brand-dark font-medium w-full">
               <li v-for="b in s.bullets" :key="b" class="flex items-center gap-3">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 text-brand-red flex-shrink-0">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                </svg>
+                <Check class="w-5 h-5 text-brand-red flex-shrink-0 mt-0.5" />
                 <span>{{ b }}</span>
               </li>
             </ul>
@@ -92,19 +88,12 @@
 </template>
 <script setup>
 import { h } from 'vue';
-const CodeIcon = () => h('svg', { xmlns: 'http://www.w3.org/2000/svg', fill: 'none', viewBox: '0 0 24 24', stroke: 'currentColor', 'stroke-width': '2' }, [
-  h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5' })
-]);
-const LayoutIcon = () => h('svg', { xmlns: 'http://www.w3.org/2000/svg', fill: 'none', viewBox: '0 0 24 24', stroke: 'currentColor', 'stroke-width': '2' }, [
-  h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z' })
-]);
-const ChartIcon = () => h('svg', { xmlns: 'http://www.w3.org/2000/svg', fill: 'none', viewBox: '0 0 24 24', stroke: 'currentColor', 'stroke-width': '2' }, [
-  h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125C16.5 3.504 17.004 3 17.625 3h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z' })
-]);
+import { ArrowRight, Check, Code2, LayoutDashboard, BarChart3 } from 'lucide-vue-next';
+
 const pillars = [
-  { title: 'Planning', desc: 'Discovery, technical architecture, and roadmap definition tailored to your business outcomes.', icon: LayoutIcon },
-  { title: 'Implementation', desc: 'Clean, tested, scalable code shipped on iterative sprints with full transparency.', icon: CodeIcon },
-  { title: 'Insights', desc: 'Continuous monitoring, analytics, and optimization to evolve the product post-launch.', icon: ChartIcon }
+  { title: 'Planning', desc: 'Discovery, technical architecture, and roadmap definition tailored to your business outcomes.', icon: LayoutDashboard },
+  { title: 'Implementation', desc: 'Clean, tested, scalable code shipped on iterative sprints with full transparency.', icon: Code2 },
+  { title: 'Insights', desc: 'Continuous monitoring, analytics, and optimization to evolve the product post-launch.', icon: BarChart3 }
 ];
 const sections = [
   {

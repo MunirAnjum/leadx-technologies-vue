@@ -35,9 +35,7 @@
             <p class="text-brand-gray text-sm sm:text-base leading-relaxed">{{ s.desc }}</p>
             <ul class="flex flex-col gap-3.5 text-sm text-brand-dark font-medium w-full">
               <li v-for="b in s.bullets" :key="b" class="flex items-center gap-3">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 text-brand-red flex-shrink-0">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                </svg>
+                <check class="h-4 w-4 text-brand-red flex-shrink-0" />
                 <span>{{ b }}</span>
               </li>
             </ul>
@@ -64,34 +62,85 @@
     </div>
   </div>
 </template>
+
 <script setup>
-import { h } from 'vue';
-const SupportIcon = () => h('svg', { xmlns: 'http://www.w3.org/2000/svg', fill: 'none', viewBox: '0 0 24 24', stroke: 'currentColor', 'stroke-width': '2' }, [
-  h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z' })
-]);
-const RocketIcon = () => h('svg', { xmlns: 'http://www.w3.org/2000/svg', fill: 'none', viewBox: '0 0 24 24', stroke: 'currentColor', 'stroke-width': '2' }, [
-  h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z' })
-]);
-const BrainIcon = () => h('svg', { xmlns: 'http://www.w3.org/2000/svg', fill: 'none', viewBox: '0 0 24 24', stroke: 'currentColor', 'stroke-width': '2' }, [
-  h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z' })
-]);
+import {
+  Users,
+  Rocket,
+  Brain,
+  ClipboardCheck,
+  Search,
+  ShieldCheck,
+  TrendingUp,
+  Check
+} from 'lucide-vue-next';
+
+const SupportIcon = Users;
+const RocketIcon = Rocket;
+const BrainIcon = Brain;
+
 const pillars = [
-  { title: 'Managed Services', desc: 'Ongoing admin, configuration, and enhancement support to keep your org healthy and evolving.', icon: SupportIcon },
-  { title: 'Implementations', desc: 'New org builds and rollouts across Sales, Service, Experience, and Marketing Cloud.', icon: RocketIcon },
-  { title: 'Integrations & AI', desc: 'Connect Salesforce to your stack and unlock Einstein AI for predictions and automation.', icon: BrainIcon }
+  {
+    title: 'Managed Services',
+    desc: 'Ongoing admin, configuration, and enhancement support to keep your org healthy and evolving.',
+    icon: SupportIcon
+  },
+  {
+    title: 'Implementations',
+    desc: 'New org builds and rollouts across Sales, Service, Experience, and Marketing Cloud.',
+    icon: RocketIcon
+  },
+  {
+    title: 'Integrations & AI',
+    desc: 'Connect Salesforce to your stack and unlock Einstein AI for predictions and automation.',
+    icon: BrainIcon
+  }
 ];
+
 const sections = [
-  { eyebrow: 'Common Problems', title: 'The Problems We Solve', desc: 'Bloated orgs, low adoption, fragile customizations, and disconnected data — we untangle Salesforce so it actually drives revenue.',
-    bullets: ['Low user adoption & reporting gaps', 'Technical debt from years of customization', 'Disconnected data across systems'],
-    visualTitle: 'Salesforce That Earns Its Keep', visualDesc: 'Clean configuration, automation that works, and dashboards your team will actually use.' },
-  { eyebrow: 'Discovery', title: 'Discovery & Strategy', desc: 'We start with workshops to understand your sales motion, service workflows, and reporting needs — before touching the org.',
-    bullets: ['Stakeholder workshops', 'Process mapping & gap analysis', 'CRM strategy & roadmap'],
-    visualTitle: 'Strategy Before Configuration', visualDesc: 'Clear outcomes, prioritized backlog, and a roadmap aligned to revenue goals.' },
-  { eyebrow: 'Assessment', title: 'Org Health Assessment', desc: 'A deep audit of your existing org: technical debt, security, data quality, and optimization opportunities.',
-    bullets: ['Technical debt & code review', 'Security & sharing model audit', 'Data quality & deduplication'],
-    visualTitle: 'Know Where You Stand', visualDesc: 'A prioritized action plan covering quick wins, risk areas, and long-term improvements.' },
-  { eyebrow: 'Delivery', title: 'Delivery & Enablement', desc: 'Agile implementation with user training, change management, and post-launch hypercare to drive adoption.',
-    bullets: ['Agile sprints with demos', 'User training & enablement', 'Post-launch hypercare & support'],
-    visualTitle: 'Built To Be Adopted', visualDesc: 'Hands-on training, clear documentation, and a support model that sticks long after go-live.' }
+  {
+    eyebrow: 'Common Problems',
+    title: 'The Problems We Solve',
+    desc: 'Bloated orgs, low adoption, fragile customizations, and disconnected data — we untangle Salesforce so it actually drives revenue.',
+    bullets: [
+      'Low user adoption & reporting gaps',
+      'Technical debt from years of customization',
+      'Disconnected data across systems'
+    ],
+    icon: TrendingUp
+  },
+  {
+    eyebrow: 'Discovery',
+    title: 'Discovery & Strategy',
+    desc: 'We start with workshops to understand your sales motion, service workflows, and reporting needs — before touching the org.',
+    bullets: [
+      'Stakeholder workshops',
+      'Process mapping & gap analysis',
+      'CRM strategy & roadmap'
+    ],
+    icon: Search
+  },
+  {
+    eyebrow: 'Assessment',
+    title: 'Org Health Assessment',
+    desc: 'A deep audit of your existing org: technical debt, security, data quality, and optimization opportunities.',
+    bullets: [
+      'Technical debt & code review',
+      'Security & sharing model audit',
+      'Data quality & deduplication'
+    ],
+    icon: ShieldCheck
+  },
+  {
+    eyebrow: 'Delivery',
+    title: 'Delivery & Enablement',
+    desc: 'Agile implementation with user training, change management, and post-launch hypercare to drive adoption.',
+    bullets: [
+      'Agile sprints with demos',
+      'User training & enablement',
+      'Post-launch hypercare & support'
+    ],
+    icon: ClipboardCheck
+  }
 ];
 </script>

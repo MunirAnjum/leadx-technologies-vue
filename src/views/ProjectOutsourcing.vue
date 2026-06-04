@@ -35,9 +35,7 @@
             <p class="text-brand-gray text-sm sm:text-base leading-relaxed">{{ s.desc }}</p>
             <ul class="flex flex-col gap-3.5 text-sm text-brand-dark font-medium w-full">
               <li v-for="b in s.bullets" :key="b" class="flex items-center gap-3">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 text-brand-red flex-shrink-0">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                </svg>
+                <Check class="w-4 h-4 text-brand-red flex-shrink-0" />
                 <span>{{ b }}</span>
               </li>
             </ul>
@@ -64,40 +62,109 @@
     </div>
   </div>
 </template>
+
 <script setup>
-import { h } from 'vue';
-const StrategyIcon = () => h('svg', { xmlns: 'http://www.w3.org/2000/svg', fill: 'none', viewBox: '0 0 24 24', stroke: 'currentColor', 'stroke-width': '2' }, [
-  h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z' })
-]);
-const TruckIcon = () => h('svg', { xmlns: 'http://www.w3.org/2000/svg', fill: 'none', viewBox: '0 0 24 24', stroke: 'currentColor', 'stroke-width': '2' }, [
-  h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0H15M3.75 18.75h.75V8.25h12V18m-12-9.75h.008v.008H3.75V8.25Zm0 3h.008v.008H3.75v-.008Zm0 3h.008v.008H3.75v-.008Zm0 3h.008v.008H3.75v-.008ZM21 18.75a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm-3.75-3.75h2.25a.75.75 0 0 0 .75-.75V11.25a3 3 0 0 0-3-3h-1.5' })
-]);
-const UsersIcon = () => h('svg', { xmlns: 'http://www.w3.org/2000/svg', fill: 'none', viewBox: '0 0 24 24', stroke: 'currentColor', 'stroke-width': '2' }, [
-  h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z' })
-]);
+import {
+  Landmark,
+  Truck,
+  Users,
+  Compass,
+  Code,
+  PenTool,
+  FileText,
+  ClipboardList,
+  Settings,
+  Check
+} from 'lucide-vue-next';
+
+const StrategyIcon = Compass;
+const TruckIcon = Truck;
+const UsersIcon = Users;
+
 const pillars = [
-  { title: 'Strategy', desc: 'Product strategy, discovery workshops, and roadmap planning aligned to business outcomes.', icon: StrategyIcon },
-  { title: 'Delivery', desc: 'Senior cross-functional teams shipping production-grade software on agile cadences.', icon: TruckIcon },
-  { title: 'Management', desc: 'Dedicated PMs, daily standups, and transparent reporting from kickoff to launch.', icon: UsersIcon }
+  {
+    title: 'Strategy',
+    desc: 'Product strategy, discovery workshops, and roadmap planning aligned to business outcomes.',
+    icon: StrategyIcon
+  },
+  {
+    title: 'Delivery',
+    desc: 'Senior cross-functional teams shipping production-grade software on agile cadences.',
+    icon: TruckIcon
+  },
+  {
+    title: 'Management',
+    desc: 'Dedicated PMs, daily standups, and transparent reporting from kickoff to launch.',
+    icon: UsersIcon
+  }
 ];
+
 const sections = [
-  { eyebrow: 'Architects', title: 'Solution Architects', desc: 'Senior architects design systems built to scale — choosing the right patterns, platforms, and integrations.',
-    bullets: ['Domain-driven design', 'Cloud-native blueprints', 'Performance & security reviews'],
-    visualTitle: 'Architecture That Lasts', visualDesc: 'Clear technical decisions, documented trade-offs, and architecture you can grow into.' },
-  { eyebrow: 'Developers', title: 'Engineers & Developers', desc: 'Full-stack engineers across web, mobile, backend, and data — vetted for quality and communication.',
-    bullets: ['Senior-only engineering teams', 'Test-driven development', 'Code reviews on every PR'],
-    visualTitle: 'Production-Ready Code', visualDesc: 'Maintainable, tested, and well-documented codebases your in-house team will love inheriting.' },
-  { eyebrow: 'Designers', title: 'Product Designers', desc: 'UX research, interaction design, and visual systems crafted to delight users and meet business goals.',
-    bullets: ['User research & journey mapping', 'High-fidelity prototypes', 'Design systems & handoff'],
-    visualTitle: 'Design With Intent', visualDesc: 'Interfaces validated with real users, built on systems that scale across products.' },
-  { eyebrow: 'Business Analysts', title: 'Business Analysts', desc: 'Bridge product and engineering with clear requirements, acceptance criteria, and stakeholder alignment.',
-    bullets: ['Requirements elicitation', 'User stories & acceptance criteria', 'Stakeholder facilitation'],
-    visualTitle: 'Clarity Before Code', visualDesc: 'Crisp specs, aligned stakeholders, and predictable scope before a single line is written.' },
-  { eyebrow: 'Project Managers', title: 'Project Managers', desc: 'Experienced PMs run the rhythm — planning, risk management, and transparent status throughout.',
-    bullets: ['Agile / scrum facilitation', 'Risk & dependency tracking', 'Weekly executive reporting'],
-    visualTitle: 'Predictable Delivery', visualDesc: 'On-time, on-scope releases with no surprises — every sprint, every milestone.' },
-  { eyebrow: 'Tech Stack', title: 'Modern Tech Stack', desc: 'We work across the modern ecosystem and pick the right tool for the job, not the trend.',
-    bullets: ['React, Vue, Node, .NET, Python', 'AWS, Azure, GCP', 'Postgres, MongoDB, Redis, Kafka'],
-    visualTitle: 'Polyglot By Design', visualDesc: 'Pragmatic technology choices grounded in your team\'s skills and long-term roadmap.' }
+  {
+    eyebrow: 'Architects',
+    title: 'Solution Architects',
+    desc: 'Senior architects design systems built to scale — choosing the right patterns, platforms, and integrations.',
+    bullets: [
+      'Domain-driven design',
+      'Cloud-native blueprints',
+      'Performance & security reviews'
+    ],
+    icon: Landmark
+  },
+  {
+    eyebrow: 'Developers',
+    title: 'Engineers & Developers',
+    desc: 'Full-stack engineers across web, mobile, backend, and data — vetted for quality and communication.',
+    bullets: [
+      'Senior-only engineering teams',
+      'Test-driven development',
+      'Code reviews on every PR'
+    ],
+    icon: Code
+  },
+  {
+    eyebrow: 'Designers',
+    title: 'Product Designers',
+    desc: 'UX research, interaction design, and visual systems crafted to delight users and meet business goals.',
+    bullets: [
+      'User research & journey mapping',
+      'High-fidelity prototypes',
+      'Design systems & handoff'
+    ],
+    icon: PenTool
+  },
+  {
+    eyebrow: 'Business Analysts',
+    title: 'Business Analysts',
+    desc: 'Bridge product and engineering with clear requirements, acceptance criteria, and stakeholder alignment.',
+    bullets: [
+      'Requirements elicitation',
+      'User stories & acceptance criteria',
+      'Stakeholder facilitation'
+    ],
+    icon: FileText
+  },
+  {
+    eyebrow: 'Project Managers',
+    title: 'Project Managers',
+    desc: 'Experienced PMs run the rhythm — planning, risk management, and transparent status throughout.',
+    bullets: [
+      'Agile / scrum facilitation',
+      'Risk & dependency tracking',
+      'Weekly executive reporting'
+    ],
+    icon: ClipboardList
+  },
+  {
+    eyebrow: 'Tech Stack',
+    title: 'Modern Tech Stack',
+    desc: 'We work across the modern ecosystem and pick the right tool for the job, not the trend.',
+    bullets: [
+      'React, Vue, Node, .NET, Python',
+      'AWS, Azure, GCP',
+      'Postgres, MongoDB, Redis, Kafka'
+    ],
+    icon: Settings
+  }
 ];
 </script>

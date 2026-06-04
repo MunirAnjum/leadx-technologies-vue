@@ -34,10 +34,7 @@
             <address class="not-italic text-brand-gray text-sm flex flex-col gap-6">
               <div class="flex items-start gap-4">
                 <div class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-brand-red flex-shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-                  </svg>
+                  <MapPin class="w-5 h-5" />
                 </div>
                 <div>
                   <strong class="text-white block font-semibold text-base mb-0.5">LeadX Technologies Inc.</strong>
@@ -49,9 +46,7 @@
               <!-- Phone number block -->
               <a href="tel:0312-3456789" class="flex items-start gap-4 group focus:outline-none focus:text-white">
                 <div class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-brand-red group-hover:bg-brand-red group-hover:text-white transition-all duration-300 flex-shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 9.75v-4.5m0 4.5h4.5m-4.5 0 6-6m-3 10.5a8.25 8.25 0 0 0-16.5 0c0 4.556 3.694 8.25 8.25 8.25a8.25 8.25 0 0 0 8.25-8.25Z" />
-                  </svg>
+                  <Phone class="w-5 h-5" />
                 </div>
                 <div>
                   <strong class="text-white block font-semibold text-base mb-0.5">Direct Inquiry Line</strong>
@@ -62,9 +57,7 @@
               <!-- Email support block -->
               <a href="mailto:info@leadx.tech" class="flex items-start gap-4 group focus:outline-none focus:text-white">
                 <div class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-brand-red group-hover:bg-brand-red group-hover:text-white transition-all duration-300 flex-shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
-                  </svg>
+                  <Mail class="w-5 h-5" />
                 </div>
                 <div>
                   <strong class="text-white block font-semibold text-base mb-0.5">Enterprise Solutions Support</strong>
@@ -75,26 +68,12 @@
           </div>
 
           <!-- Trust Callout Card -->
-          <div class="bg-white rounded-3xl p-8 border border-brand-light shadow-sm flex flex-col gap-4 select-none">
-            <h4 class="font-display font-bold text-lg text-brand-dark">Our Guarantee</h4>
-            <ul class="flex flex-col gap-3 text-sm text-brand-gray">
-              <li class="flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 text-brand-red flex-shrink-0">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.746 3.746 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.746 3.746 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
-                </svg>
-                <span>SLA-backed 24-hour response matrix</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 text-brand-red flex-shrink-0">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.746 3.746 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.746 3.746 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
-                </svg>
-                <span>SOC 2 Type II verified encrypted handling</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 text-brand-red flex-shrink-0">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.746 3.746 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.746 3.746 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
-                </svg>
-                <span>Direct advisory with Enterprise cloud architects</span>
+          <div class="bg-white border border-brand-dark/5 rounded-3xl p-8">
+            <h4 class="font-display text-lg font-bold mb-4">Our Guarantee</h4>
+            <ul class="flex flex-col gap-3 text-sm text-brand-dark">
+              <li v-for="g in guarantees" :key="g" class="flex items-start gap-3">
+                <CheckCircle2 class="w-5 h-5 text-brand-red flex-shrink-0 mt-0.5" />
+                <span>{{ g }}</span>
               </li>
             </ul>
           </div>
@@ -199,9 +178,7 @@
               class="flex flex-col items-center justify-center text-center py-10 px-4 min-h-[400px]"
             >
               <div class="w-16 h-16 rounded-full bg-green-500/10 border-2 border-green-500 flex items-center justify-center text-green-500 mb-6 animate-bounce">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-8 h-8">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                </svg>
+                <CheckCircle2 class="w-5 h-5" />
               </div>
               
               <h3 class="font-display text-2xl sm:text-3xl font-bold text-brand-dark mb-4">
@@ -220,11 +197,8 @@
               </button>
             </div>
           </transition>
-
         </div>
-
       </div>
-
     </div>
   </div>
 </template>
@@ -232,6 +206,7 @@
 <script setup>
 import {sendContactForm} from '@/Api/contactApi';
 import { ref, reactive } from 'vue';
+import { MapPin, Phone, Mail, CheckCircle2, Send, Loader2 } from 'lucide-vue-next';
 
 const loading = ref(false);
 const submitted = ref(false);
@@ -278,7 +253,6 @@ const handleSubmit = async () => {
     loading.value = false;
   }
 
-
 };
 
 const resetForm = () => {
@@ -289,6 +263,11 @@ const resetForm = () => {
   formData.message = '';
 };
 
+const guarantees = [
+  'SLA-backed 24-hour response matrix',
+  'SOC 2 Type II verified encrypted handling',
+  'Direct advisory with Enterprise cloud architects'
+];
 </script>
 
 <style scoped>

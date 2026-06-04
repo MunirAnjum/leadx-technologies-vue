@@ -77,9 +77,7 @@
               class="inline-flex items-center gap-2 text-brand-red font-bold hover:gap-3 transition-all duration-200"
             >
               Partner With Us
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-              </svg>
+              <arrow-right class="h-4 w04" />
             </router-link>
           </div>
         </div>
@@ -87,7 +85,10 @@
     </div>
   </div>
 </template>
+
 <script setup>
+import { ArrowRight } from 'lucide-vue-next';
+
 const studies = [
   {
     client: 'Quantum ERP Systems',

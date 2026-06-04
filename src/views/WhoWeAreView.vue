@@ -33,21 +33,15 @@
             </p>
             <ul class="flex flex-col gap-3 text-sm text-brand-gray/95 font-medium mt-2">
               <li class="flex items-center gap-2.5">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 text-brand-red flex-shrink-0">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                </svg>
+                <ArrowRight class="h-4 w-4"/>
                 <span>End-to-end scope management</span>
               </li>
               <li class="flex items-center gap-2.5">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 text-brand-red flex-shrink-0">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                </svg>
+                <ArrowRight class="h-4 w-4"/>
                 <span>Rigorous automated QA testing cycles</span>
               </li>
               <li class="flex items-center gap-2.5">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 text-brand-red flex-shrink-0">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                </svg>
+                <ArrowRight class="h-4 w-4"/>
                 <span>Product manager & tech lead included</span>
               </li>
             </ul>
@@ -59,9 +53,7 @@
               class="inline-flex items-center gap-2 text-brand-red font-bold hover:gap-3 transition-all duration-200"
             >
               Request Managed Proposal
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-              </svg>
+              <ArrowRight class="h-4 w-4"/>
             </router-link>
           </div>
         </div>
@@ -82,21 +74,15 @@
             </p>
             <ul class="flex flex-col gap-3 text-sm text-brand-gray/95 font-medium mt-2">
               <li class="flex items-center gap-2.5">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 text-brand-red flex-shrink-0">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                </svg>
+                <ArrowRight class="h-4 w-4"/>
                 <span>Rapid onboarding in under 5 business days</span>
               </li>
               <li class="flex items-center gap-2.5">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 text-brand-red flex-shrink-0">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                </svg>
+                <ArrowRight class="h-4 w-4"/>
                 <span>Flexible, month-to-month contracts</span>
               </li>
               <li class="flex items-center gap-2.5">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 text-brand-red flex-shrink-0">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                </svg>
+                <ArrowRight class="h-4 w-4"/>
                 <span>Fully integrated with your tooling (Jira/GitHub)</span>
               </li>
             </ul>
@@ -108,9 +94,7 @@
               class="inline-flex items-center gap-2 text-brand-red font-bold hover:gap-3 transition-all duration-200"
             >
               Consult On Supplemental Developers
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-              </svg>
+              <ArrowRight class="h-4 w-4"/>
             </router-link>
           </div>
         </div>
@@ -148,25 +132,34 @@
 </template>
 
 <script setup>
-import { h } from 'vue';
-
-const PuzzleIcon = () => h('svg', { xmlns: 'http://www.w3.org/2000/svg', fill: 'none', viewBox: '0 0 24 24', stroke: 'currentColor', 'stroke-width': '2' }, [
-  h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M14.25 9.75 16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0 0 20.25 18V6A2.25 2.25 0 0 0 18 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25Z' })
-]);
-const BoltIcon = () => h('svg', { xmlns: 'http://www.w3.org/2000/svg', fill: 'none', viewBox: '0 0 24 24', stroke: 'currentColor', 'stroke-width': '2' }, [
-  h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'm3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z' })
-]);
-const ShieldIcon = () => h('svg', { xmlns: 'http://www.w3.org/2000/svg', fill: 'none', viewBox: '0 0 24 24', stroke: 'currentColor', 'stroke-width': '2' }, [
-  h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.746 3.746 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.746 3.746 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z' })
-]);
-const HeartIcon = () => h('svg', { xmlns: 'http://www.w3.org/2000/svg', fill: 'none', viewBox: '0 0 24 24', stroke: 'currentColor', 'stroke-width': '2' }, [
-  h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z' })
-]);
+import {
+  Puzzle,
+  Zap,
+  Shield,
+  Heart,
+  ArrowRight
+} from 'lucide-vue-next';
 
 const values = [
-  { title: 'Technical Mastery', desc: 'We only hire senior engineers, architects, and product strategists with proven track records.', icon: BoltIcon },
-  { title: 'Radical Transparency', desc: 'No transaction bottlenecks, hidden fees, or gatekeeping. Open source code standard.', icon: PuzzleIcon },
-  { title: 'Security Standard', desc: 'All workflows follow rigorous SOC 2 data protection benchmarks natively.', icon: ShieldIcon },
-  { title: 'Client Longevity', desc: 'We develop code structured to facilitate ongoing evolution long after initial deployment.', icon: HeartIcon }
+  {
+    title: 'Technical Mastery',
+    desc: 'We only hire senior engineers, architects, and product strategists with proven track records.',
+    icon: Zap
+  },
+  {
+    title: 'Radical Transparency',
+    desc: 'No transaction bottlenecks, hidden fees, or gatekeeping. Open source code standard.',
+    icon: Puzzle
+  },
+  {
+    title: 'Security Standard',
+    desc: 'All workflows follow rigorous SOC 2 data protection benchmarks natively.',
+    icon: Shield
+  },
+  {
+    title: 'Client Longevity',
+    desc: 'We develop code structured to facilitate ongoing evolution long after initial deployment.',
+    icon: Heart
+  }
 ];
 </script>

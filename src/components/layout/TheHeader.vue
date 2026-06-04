@@ -19,7 +19,6 @@
           class="flex items-center gap-1 font-display text-2xl font-bold tracking-wider group focus:outline-none"
         >
           <img :src="logo" alt="LEADX" class="h-8 w-auto" />
-          <span class="text-brand-red animate-pulse logo-cursor">_</span>
         </router-link>
 
         <ul class="hidden lg:flex items-center gap-8 ml-12 font-sans text-sm font-medium">

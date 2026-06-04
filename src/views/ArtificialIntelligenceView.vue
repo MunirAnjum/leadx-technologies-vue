@@ -54,9 +54,7 @@
               :key="bullet"
               class="flex items-center gap-2.5 text-xs text-white/80"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-3.5 h-3.5 text-brand-red flex-shrink-0">
-                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-              </svg>
+              <Check class="w-5 h-5 text-brand-red flex-shrink-0 mt-0.5" />
               <span>{{ bullet }}</span>
             </div>
           </div>
@@ -76,9 +74,7 @@
           class="inline-flex items-center justify-center gap-2 bg-brand-red text-white px-8 py-3.5 rounded-full text-sm font-bold hover:bg-red-700 hover:shadow-lg hover:shadow-brand-red/35 active:scale-95 transition-all duration-200 mt-2"
         >
           Book AI Advisory Call
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-          </svg>
+          <arrow-right class="w-4 h-4"/>
         </router-link>
       </div>
 
@@ -87,26 +83,13 @@
 </template>
 
 <script setup>
-import { h } from 'vue';
-
-const CpuIcon = () => h('svg', { xmlns: 'http://www.w3.org/2000/svg', fill: 'none', viewBox: '0 0 24 24', stroke: 'currentColor', 'stroke-width': '2' }, [
-  h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M8.25 3v1.5M12 3v1.5m3.75-1.5v1.5M8.25 19.5V21M12 19.5V21m3.75-1.5V21m-12-12.75h1.5m-1.5 3h1.5m-1.5 3h1.5m16.5-9h-1.5m1.5 3h-1.5m1.5 3h-1.5M21 8.25a.75.75 0 0 0-.75-.75h-3.75V3.75a.75.75 0 0 0-.75-.75H8.25a.75.75 0 0 0-.75.75v3.75H3.75a.75.75 0 0 0-.75.75v7.5a.75.75 0 0 0 .75.75h3.75v3.75a.75.75 0 0 0 .75.75h7.5a.75.75 0 0 0 .75-.75v-3.75h3.75a.75.75 0 0 0 .75-.75V8.25ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0Z' })
-]);
-const BoltIcon = () => h('svg', { xmlns: 'http://www.w3.org/2000/svg', fill: 'none', viewBox: '0 0 24 24', stroke: 'currentColor', 'stroke-width': '2' }, [
-  h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'm3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z' })
-]);
-const AdjustmentsIcon = () => h('svg', { xmlns: 'http://www.w3.org/2000/svg', fill: 'none', viewBox: '0 0 24 24', stroke: 'currentColor', 'stroke-width': '2' }, [
-  h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75' })
-]);
-const ShieldIcon = () => h('svg', { xmlns: 'http://www.w3.org/2000/svg', fill: 'none', viewBox: '0 0 24 24', stroke: 'currentColor', 'stroke-width': '2' }, [
-  h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.746 3.746 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.746 3.746 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z' })
-]);
+import { Cpu, Zap, SlidersHorizontal, ShieldCheck, Check, ArrowRight } from 'lucide-vue-next';
 
 const capabilities = [
   {
     title: 'LLM Fine-Tuning & Integration',
     desc: 'Integrate pre-trained language models (like Claude or GPT-4) or deploy fine-tuned local models (Llama 3) configured directly for your proprietary datasets.',
-    icon: CpuIcon,
+    icon: Cpu,
     bullets: [
       'Retrieval-Augmented Generation (RAG) architecture',
       'Context window optimization & token pricing control',
@@ -116,7 +99,7 @@ const capabilities = [
   {
     title: 'Agentic Process Automation',
     desc: 'Devise fully autonomous multi-agent pipelines that interact, trigger API hooks, analyze incoming files, and complete recursive task backlogs with zero manual friction.',
-    icon: BoltIcon,
+    icon: Zap,
     bullets: [
       'Self-healing analytical workflows',
       'Fully automated customer support agent layers',
@@ -126,7 +109,7 @@ const capabilities = [
   {
     title: 'Custom Machine Learning Systems',
     desc: 'Train dedicated neural pipelines, classification models, or regression analytics engines designed strictly to process high-throughput predictive data streams.',
-    icon: AdjustmentsIcon,
+    icon: SlidersHorizontal,
     bullets: [
       'Data preparation & ETL pipelines automation',
       'Custom regression & classification modelling',
@@ -136,7 +119,7 @@ const capabilities = [
   {
     title: 'AI Governance & Safety Auditing',
     desc: 'Implement strict filters, guardrails, and compliance matrices ensuring your AI systems are fully SOC 2 secure and respect customer confidentiality metrics.',
-    icon: ShieldIcon,
+    icon: ShieldCheck,
     bullets: [
       'Data leakage prevention structures',
       'Prompt injection defenses auditing',

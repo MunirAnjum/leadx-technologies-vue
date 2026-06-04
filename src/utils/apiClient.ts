@@ -1,5 +1,4 @@
-// Centralised API client for the .NET backend.
-// Auto-attaches the Bearer token saved at login and exposes typed helpers.
+
 export const API_BASE_URL = 'https://localhost:44375/api';
 
 export interface LoginResponse {
@@ -67,9 +66,6 @@ export interface Contact {
 }
 export const api = {
   // ---- Auth ----
-  // NOTE: No real auth endpoint was provided. This uses a dummy check.
-  // Replace the body of `login` with a fetch call to your real endpoint, e.g.
-  //   return request('/auth/login', { method: 'POST', body: JSON.stringify({ email, password }) });
   async login(email: string, password: string): Promise<LoginResponse> {
   return request<LoginResponse>('/auth/login', {
       method: 'POST',
