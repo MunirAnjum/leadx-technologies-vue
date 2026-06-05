@@ -1,7 +1,7 @@
 <template>
-  <div class="pt-[110px] md:pt-[130px] overflow-hidden bg-white text-brand-dark font-sans">
+  <div class="overflow-hidden bg-white sm:px-18 lg:px-16 text-brand-dark font-sans">
     <!-- HERO -->
-    <section class="relative py-16 lg:py-24 xl:py-28 bg-gradient-to-b from-brand-light/50 to-white">
+    <section class="relative py-16 lg:py-24 xl:py-28 bg-gradient-to-b from-brand-light to-white">
       <div class="absolute inset-0 overflow-hidden pointer-events-none">
         <div class="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-brand-red/5 blur-[120px]"></div>
         <div class="absolute top-[60%] -left-40 w-[500px] h-[500px] rounded-full bg-brand-dark/5 blur-[100px]"></div>
@@ -23,7 +23,8 @@
             </p>
             <div class="flex flex-wrap items-center gap-4 w-full sm:w-auto">
               <router-link to="/contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-brand-red text-white px-8 py-3.5 rounded-full font-bold hover:bg-red-700 hover:shadow-lg hover:shadow-brand-red/20 active:scale-95 transition-all duration-200">
-                Get Started <ArrowRight class="w-4 h-4" />
+                Get Started 
+                <ArrowRight class="w-4 h-4" />
               </router-link>
               <router-link to="/services" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border-2 border-brand-dark/10 hover:border-brand-dark/30 text-brand-dark px-8 py-3.5 rounded-full font-semibold transition active:scale-95 duration-200">
                 Explore Pillars
@@ -265,7 +266,8 @@
             Our seasoned professionals are ready to help your business devise and implement scaling digital solutions.
           </p>
           <router-link to="/contact" class="relative z-10 inline-flex items-center gap-2 bg-brand-red text-white px-8 py-3.5 rounded-full font-bold hover:bg-red-700 active:scale-95 transition">
-            Get Started <ArrowRight class="w-4 h-4" />
+            Get Started 
+            <ArrowRight class="w-4 h-4" />
           </router-link>
         </div>
       </div>

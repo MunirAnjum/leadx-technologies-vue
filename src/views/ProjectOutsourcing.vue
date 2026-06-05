@@ -54,10 +54,13 @@
           </div>
         </div>
       </div>
-      <div class="mt-24 bg-brand-red rounded-3xl p-10 md:p-16 text-white text-center flex flex-col items-center gap-5">
+      <div class="mt-24 bg-brand-dark rounded-3xl p-10 md:p-16 text-white text-center flex flex-col items-center gap-5">
         <h2 class="font-display text-3xl sm:text-4xl font-bold">Scale your delivery team in days</h2>
         <p class="max-w-2xl text-white/90 text-sm sm:text-base">Senior engineers and product specialists ready to plug into your roadmap.</p>
-        <router-link to="/contact" class="inline-flex items-center gap-2 bg-white text-brand-red px-6 py-3 rounded-full text-sm font-semibold hover:bg-brand-light transition-all">Get In Touch</router-link>
+        <router-link to="/contact" class="relative z-10 inline-flex items-center gap-2 bg-brand-red text-white px-8 py-3.5 rounded-full font-bold hover:bg-red-700 active:scale-95 transition">
+          Get Started 
+          <ArrowRight class="w-4 h-4" />
+        </router-link>      
       </div>
     </div>
   </div>

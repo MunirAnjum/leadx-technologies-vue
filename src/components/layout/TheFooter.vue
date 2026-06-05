@@ -93,11 +93,11 @@
 
             <!-- Email Link -->
             <a 
-              href="mailto:infoleadx@.gmail.com" 
+              href="mailto:info@leadx.com" 
               class="flex items-center gap-2 hover:text-white transition-colors duration-200 w-fit focus:outline-none focus:text-white"
             >
               <Mail class="w-4 h-4 text-brand-red flex-shrink-0" />
-              <span class="font-medium hover:underline">infoleadx@.gmail.com</span>
+              <span class="font-medium hover:underline">info@leadx.com</span>
             </a>
           </address>
         </div>

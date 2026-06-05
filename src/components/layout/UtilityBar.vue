@@ -1,6 +1,6 @@
 <template>
   <div
-    class="border-b border-brand-red/30 py-3 text-xs transition-all duration-300"
+    class="border-b border-brand-red/30 pt-2 pb-1 text-xs transition-all duration-300"
   >
     <div
       class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0"
@@ -23,12 +23,12 @@
 
         <!-- Email -->
         <a
-          href="mailto:infoleadx@.gmail.com"
+          href="mailto:info@leadx.com"
           class="flex items-center gap-2 px-4 text-black transition-colors duration-200"
           title="Email LeadX"
         >
           <Mail class="w-4 h-4 text-brand-red" />
-          <span class="font-medium">infoleadx@.gmail.com</span>
+          <span class="font-medium">info@leadx.com</span>
         </a>
       </div>
 
