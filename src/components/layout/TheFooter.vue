@@ -137,9 +137,9 @@ import {
   Phone,
   Mail
 } from 'lucide-vue-next';
+import logo from '@/assets/images/leadx-logo-transp.png';
 
 const currentYear = computed(() => new Date().getFullYear());
-import logo from '@/assets/images/leadx-logo-transp.png';
 
 const socialLinks = [
   { name: 'LinkedIn', url: 'https://linkedin.com', icon: Linkedin },
@@ -155,10 +155,13 @@ const whoWeAreLinks = [
 ];
 
 const offerLinks = [
-  { name: 'Custom Software Development', path: '/services' },
-  { name: 'Systems Integration', path: '/services' },
-  { name: 'Cloud & DevOps Services', path: '/services' },
-  { name: 'Artificial Intelligence Solutions', path: '/ai' }
+  { name: 'Custom Software Development', path: '/custom-development' },
+  { name: 'Systems Integration', path: '/system-integration' },
+  { name: 'Cloud & DevOps Services', path: '/cloud-migration' },
+  { name: 'Artificial Intelligence Solutions', path: '/artificial-intelligence' },
+  { name: 'Salesforce Services', path: '/salesforce-services' },
+  { name: 'Project Outsourcing', path: '/project-outsourcing' }
+
 ];
 </script>
 

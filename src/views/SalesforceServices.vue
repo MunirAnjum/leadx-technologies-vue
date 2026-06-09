@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-[110px] md:pt-[130px] min-h-screen bg-white text-brand-dark font-sans pb-20">
+  <div class="pt-[110px] md:pt-[130px] min-h-screen bg-white text-brand-dark font-sans pb-20 bg-[url('/images/background.jpg')]">
     <div class="max-w-7xl mx-auto px-6 relative z-10">
       <div class="flex flex-col items-center text-center max-w-3xl mx-auto gap-4 mb-20">
         <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-brand-red/10 text-brand-red uppercase tracking-wider">
@@ -54,19 +54,24 @@
           </div>
         </div>
       </div>
-      <div class="mt-24 bg-brand-red rounded-3xl p-10 md:p-16 text-white text-center flex flex-col items-center gap-5">
-        <h2 class="font-display text-3xl sm:text-4xl font-bold">Get more from Salesforce</h2>
-        <p class="max-w-2xl text-white/90 text-sm sm:text-base">Implementations, integrations, managed services, and AI — done right the first time.</p>
-        <router-link to="/contact" class="relative z-10 inline-flex items-center gap-2 bg-brand-red text-white px-8 py-3.5 rounded-full font-bold hover:bg-red-700 active:scale-95 transition">
-          Get Started 
-          <ArrowRight class="w-4 h-4" />
-        </router-link>      
-      </div>
+      <section class="py-16 md:py-24 bg-brand-light/20">
+        <div class="max-w-5xl mx-auto px-6">
+          <div class="mt-24 bg-brand-dark rounded-3xl p-10 md:p-16 text-white text-center flex flex-col items-center gap-5">
+            <h2 class="font-display text-3xl sm:text-4xl font-bold">Get more from Salesforce</h2>
+            <p classclass="max-w-2xl text-white/90 text-sm sm:text-base">Implementations, integrations, managed services, and AI — done right the first time.</p>
+            <router-link to="/contact" class="relative z-10 inline-flex items-center gap-2 bg-brand-red text-white px-8 py-3.5 rounded-full font-bold hover:bg-red-700 active:scale-95 transition">
+              Get Started 
+              <ArrowRight class="w-4 h-4" />
+            </router-link>
+          </div>
+        </div>      
+      </section>
     </div>
   </div>
 </template>
 
 <script setup>
+
 import {
   Users,
   Rocket,
@@ -77,6 +82,7 @@ import {
   TrendingUp,
   Check
 } from 'lucide-vue-next';
+import bachgroundImage from '@/assets/images/background-image.png'
 
 const SupportIcon = Users;
 const RocketIcon = Rocket;

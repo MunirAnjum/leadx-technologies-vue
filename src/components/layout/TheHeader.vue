@@ -79,22 +79,16 @@
         <!-- Action Buttons -->
         <div class="hidden lg:flex">
           <router-link 
-            to="/contact" 
-            class="inline-flex items-center gap-2 bg-brand-red text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-red-700 hover:shadow-lg hover:shadow-brand-red/20 active:scale-95 transition-all duration-200 focus:outline-none"
-          >
+            to="/contact" class="btn-primary">
             Contact Us
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-            </svg>
+            <ArrowRight class="h-4 w-4"/>
           </router-link>
         </div>
 
         <!-- Login / Dashboard Button -->
         <router-link
           v-if="!isLoggedIn"
-          to="/login"
-          class="inline-flex items-center gap-2 border border-gray-300 text-gray-900 px-5 py-2.5 rounded-full text-sm font-semibold hover:border-brand-red hover:text-brand-red transition"
-        >
+          to="/login" class="btn-primary">
           Login
         </router-link>
 
@@ -121,21 +115,6 @@
         v-if="mobileMenuOpen" 
         class="lg:hidden fixed top-[60px] left-0 w-full h-[calc(100vh-60px)] bg-brand-dark text-white flex flex-col justify-between p-8 overflow-y-auto border-t border-white/10"
       >
-
-
-        <!-- Mobile Action Footer -->
-        <!-- <div class="flex flex-col gap-4 pt-8 border-t border-white/10">
-          <router-link 
-            @click="closeMobileMenu"
-            to="/contact" 
-            class="inline-flex items-center justify-center gap-2 bg-brand-red text-white py-4 rounded-full font-bold hover:bg-red-700 transition shadow-lg shadow-brand-red/20"
-          >
-            Get Started
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-            </svg>
-          </router-link>
-        </div> -->
       </div>
     </transition>
   </header>
@@ -148,7 +127,7 @@ import logo from '@/assets/images/leadx-logo.png'
 import { auth } from '@/utils/apiClient'
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
-
+import { ArrowRight } from 'lucide-vue-next';
 const router = useRouter()
 
 const isLoggedIn = computed(() => auth.isAuthenticated())
@@ -195,15 +174,6 @@ const handleScroll = () => {
   isScrolled.value = window.scrollY > 40;
 };
 
-// close dropdown on outside click
-// const handleClickOutside = (e) => {
-//   if (
-//     dropdownRef.value &&
-//     !dropdownRef.value.contains(e.target)
-//   ) {
-//     servicesDropdownOpen.value = false;
-//   }
-// };
 const handleClickOutside = (e) => {
   const dropdown = document.querySelector('.services-dropdown')
 

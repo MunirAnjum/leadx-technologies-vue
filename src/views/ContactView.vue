@@ -1,22 +1,31 @@
 <template>
-  <div class="pt-[110px] md:pt-[130px] min-h-screen bg-gradient-to-b from-brand-light/30 via-white to-brand-light/20 text-brand-dark font-sans pb-20">
-    <div class="max-w-7xl mx-auto px-6 relative z-10">
-      
-      <!-- Top Header Text -->
-      <div class="flex flex-col items-center text-center max-w-2xl mx-auto gap-4 mb-16">
-        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-brand-red/10 text-brand-red uppercase tracking-wider">
-          Let's Collaborate
-        </span>
-        <h1 class="font-display text-4xl sm:text-5xl font-bold tracking-tight text-brand-dark">
-          Get in Touch
-        </h1>
-        <p class="text-brand-gray text-base sm:text-lg leading-relaxed">
-          Tell us about your scaling targets, engineering backlogs, or architecture goals, and our Solutions Architects will advise the ideal deployment.
-        </p>
+  <div class="overflow-hidden bg-white item-center sm:px-18 lg:px-16 text-brand-dark font-sans">
+    <!-- HERO -->
+    <section class="hero-dark">
+      <!-- <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-brand-red/5 blur-[120px]"></div>
+        <div class="absolute top-[60%] -left-40 w-[500px] h-[500px] rounded-full bg-brand-dark/5 blur-[100px]"></div>
+        <div class="absolute right-10 top-20 w-44 h-44 opacity-[0.03] bg-[radial-gradient(#0A0A0A_2px,transparent_2px)] [background-size:16px_16px]"></div>
+      </div> -->
+      <div class="container-x pt-20 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          
+            <span class="eyebrow-dark mb-6">
+              <Zap class="w-3.5 h-3.5" />
+              Let's collaborate
+            </span>
+            <h1 class="h-hero text-white mb-6">
+              Contact
+              <span class="text-gradient-red">LeadX</span>
+            </h1>
+            <p class="text-white/70 text-base sm:text-lg max-w-2xl leading-relaxed mt-5">
+              Tell us about your scaling targets, engineering backlogs, or architecture goals, and our Solutions Architects will advise the ideal deployment.            </p>
+        </div>
       </div>
+    </section>
 
       <!-- Main Layout Grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <div class="grid grid-cols-1 py-20 lg:grid-cols-12 gap-12 items-start">
         
         <!-- COLUMN 1: CONTACT CARD & DETAILS -->
         <div class="lg:col-span-5 flex flex-col gap-8 lg:sticky lg:top-28">
@@ -200,7 +209,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script setup>

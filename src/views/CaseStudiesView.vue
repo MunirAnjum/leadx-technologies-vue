@@ -1,11 +1,11 @@
 <template>
   <div class="overflow-hidden bg-white px-4 sm:px-16 lg:px-14 text-brand-dark font-sans">
     <!-- Hero -->
-    <section class="relative py-32 bg-brand-dark overflow-hidden rounded-b-[50px]">
-      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <section class="hero-dark">
+      <!-- <div class="absolute inset-0 overflow-hidden pointer-events-none">
         <div class="absolute -top-40 -right-40 w-[700px] h-[700px] rounded-full bg-brand-red/15 blur-[140px]"></div>
         <div class="absolute -bottom-40 -left-40 w-[600px] h-[600px] rounded-full bg-white/5 blur-[120px]"></div>
-      </div>
+      </div> -->
       <div class="max-w-7xl mx-auto px-6 pt-20 relative z-10">
         <div class="max-w-4xl mx-auto">
           <span class="inline-flex gap-2 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider bg-brand-red/15 border border-brand-red/20 text-brand-red uppercase mb-6">
@@ -40,7 +40,7 @@
           </p>
           <router-link
             to="/contact"
-            class="self-start inline-flex items-center gap-2 bg-brand-red text-white px-6 py-3 rounded-full text-sm font-bold hover:bg-red-700 hover:shadow-lg hover:shadow-brand-red/20 active:scale-95 transition-all duration-200 mt-2"
+            class="btn-primary"
           >
             Learn More <ArrowRight class="w-4 h-4" />
           </router-link>
@@ -86,7 +86,7 @@
           <p class="max-w-2xl text-white/80 text-sm sm:text-base relative z-10">
             Let's talk through your roadmap and explore how our team can accelerate your next initiative.
           </p>
-          <router-link to="/contact" class="relative z-10 inline-flex items-center gap-2 bg-brand-red text-white px-8 py-3.5 rounded-full font-bold hover:bg-red-700 active:scale-95 transition">
+          <router-link to="/contact" class="btn-secondary">
             Get Started 
             <ArrowRight class="w-4 h-4" />
           </router-link>

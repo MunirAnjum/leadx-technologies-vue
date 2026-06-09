@@ -1,24 +1,24 @@
 <template>
-  <div class="overflow-hidden bg-white px-4 sm:px-16 lg:px-14 text-brand-dark font-sans">
+  <div class="page-wrap">
 
     <!-- HERO -->
-    <section class="relative py-32 bg-brand-dark overflow-hidden rounded-b-[50px]">
-      <div class="absolute inset-0 pointer-events-none">
-        <div class="absolute -top-40 -right-40 w-[700px] h-[700px] rounded-full bg-brand-red/15 blur-[140px]"></div>
-        <div class="absolute -bottom-40 -left-40 w-[600px] h-[600px] rounded-full bg-white/5 blur-[120px]"></div>
-      </div>
+    <section class="hero-dark">
+      <!-- <div class="hero-glow-red">
+        <div class="hero-glow-white"></div>
+        <div class="hero-grid-dots"></div>
+      </div> -->
 
-      <div class="max-w-7xl mx-auto px-6 pt-20 relative z-10">
+      <div class="container-x pt-20 relative z-10">
         <div class="max-w-4xl mx-auto">
 
-          <div class="inline-flex gap-2 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider bg-brand-red/15 border border-brand-red/20 text-brand-red uppercase mb-6">
+          <div class="eyebrow-dark mb-6">
             <BookOpen class="w-3.5 h-3.5" />
             Resources & Insights
           </div>
 
-          <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1] mb-6">
+          <h1 class="h-hero text-white mb-6">
             Technical
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-red via-red-500 to-orange-400">
+            <span class="text-gradient-red">
               Insights
             </span>
           </h1>
@@ -83,50 +83,40 @@
                 </div>
                 <span class="text-xs font-bold">By {{ post.author }}</span>
               </div>
-
               <router-link
                 to="/contact"
-                class="inline-flex items-center gap-2 bg-brand-red text-white px-6 py-2.5 rounded-full font-bold hover:bg-red-700 transition"
+                class="btn-primary"
               >
                 Get Started
                 <ArrowRight class="w-4 h-4" />
               </router-link>
             </div>
-
           </article>
-
         </div>
       </div>
     </section>
 
     <!-- CTA -->
-    <section class="py-16 md:py-24 bg-brand-light/20">
-      <div class="max-w-5xl mx-auto px-6">
+    <section class="section-sm">
+      <div class="container-narrow">
 
-        <div class="rounded-3xl bg-brand-dark text-white p-10 md:p-16 text-center flex flex-col items-center gap-5 relative overflow-hidden">
-          <div class="absolute -top-24 -right-24 w-64 h-64 rounded-full bg-brand-red/20 blur-3xl"></div>
-
+        <div class="cta-panel">
           <h2 class="font-display text-3xl sm:text-4xl font-bold relative z-10">
             Want more technical insights?
           </h2>
-
           <p class="max-w-2xl text-white/80 text-sm sm:text-base relative z-10">
             Get updates on architecture, AI engineering, and enterprise-grade system design.
           </p>
-
           <router-link
             to="/contact"
-            class="relative z-10 inline-flex items-center gap-2 bg-brand-red text-white px-8 py-3.5 rounded-full font-bold hover:bg-red-700 active:scale-95 transition"
+            class="btn-secondary"
           >
             Get Started
             <ArrowRight class="w-4 h-4" />
           </router-link>
-
         </div>
-
       </div>
     </section>
-
   </div>
 </template>
 

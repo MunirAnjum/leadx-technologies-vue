@@ -22,7 +22,7 @@
               We help forward-thinking companies build secure, scalable solutions that streamline operations, modernize legacy systems, and accelerate digital transformation.
             </p>
             <div class="flex flex-wrap items-center gap-4 w-full sm:w-auto">
-              <router-link to="/contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-brand-red text-white px-8 py-3.5 rounded-full font-bold hover:bg-red-700 hover:shadow-lg hover:shadow-brand-red/20 active:scale-95 transition-all duration-200">
+              <router-link to="/contact" class="btn-primary">
                 Get Started 
                 <ArrowRight class="w-4 h-4" />
               </router-link>
@@ -265,8 +265,8 @@
           <p class="max-w-2xl text-white/80 text-sm sm:text-base relative z-10">
             Our seasoned professionals are ready to help your business devise and implement scaling digital solutions.
           </p>
-          <router-link to="/contact" class="relative z-10 inline-flex items-center gap-2 bg-brand-red text-white px-8 py-3.5 rounded-full font-bold hover:bg-red-700 active:scale-95 transition">
-            Get Started 
+          <router-link to="/contact" class="btn-secondary">
+                      Get Started 
             <ArrowRight class="w-4 h-4" />
           </router-link>
         </div>
@@ -278,26 +278,8 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import {
-  Check,
-  Lightbulb,
-  Code2,
-  Workflow,
-  Building2,
-  Cpu,
-  Palette,
-  Bot,
-  BarChart3,
-  Briefcase,
-  Rocket,
-  Globe,
-  Database,
-  Server,
-  ArrowRight,
-  ChevronLeft,
-  ChevronRight,
-  Quote,
-  Zap
-} from 'lucide-vue-next';
+  Check, Lightbulb, Code2, Workflow, Building2, Cpu, Palette, Bot, BarChart3, Briefcase, Rocket, Globe, Database, Server,
+  ArrowRight, ChevronLeft, ChevronRight, Quote, Zap } from 'lucide-vue-next';
 
 const whatWeDo = [
   {
