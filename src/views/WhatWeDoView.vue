@@ -12,7 +12,7 @@
             Strategy. Technology.
             <span class="text-gradient-red">Transformation.</span>
           </h1>
-          <p class="text-white/70 text-base sm:text-lg max-w-2xl leading-relaxed mt-5">
+          <p class="text-white/70 text-lg leading-relaxed max-w-3xl">
             A three-phase approach that turns business goals into production software — and keeps it running at peak.
           </p>
           <router-link to="/contact" class="btn-secondary mt-6">
@@ -23,7 +23,7 @@
     </section>
 
     <!-- APPROACH -->
-    <section id="approach" class="section bg-white">
+    <section class="section bg-white">
       <div class="container-x">
         <div class="text-center mb-14">
           <span class="eyebrow-line">Our Approach</span>
@@ -72,8 +72,7 @@
       <div class="container-x">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div v-for="(o, i) in outcomes" :key="i"
-            class="rounded-3xl bg-brand-dark text-white p-10 flex flex-col gap-4 relative overflow-hidden hover:-translate-y-1 transition-all duration-300">
-            <div class="absolute -bottom-16 -right-16 w-48 h-48 rounded-full bg-brand-red/20 blur-3xl"></div>
+            class="rounded-3xl bg-brand-dark/95 text-white p-10 flex flex-col gap-4 relative overflow-hidden hover:-translate-y-1 transition-all duration-300">
             <component :is="o.icon" class="w-10 h-10 text-brand-red relative z-10" />
             <h3 class="h-card relative z-10">{{ o.title }}</h3>
             <p class="text-white/70 text-sm leading-relaxed relative z-10">{{ o.desc }}</p>
@@ -116,9 +115,8 @@
     <section class="section-sm bg-white">
       <div class="container-narrow">
         <div class="cta-panel">
-          <div class="cta-panel__glow"></div>
           <h2 class="cta-title">
-            Have a project in mind? We're ready. Let's talk.
+            Have a project in mind? Let's talk.
           </h2>
           <p class="cta-subtitle">
             Tell us about your roadmap — we'll bring the team to execute it.

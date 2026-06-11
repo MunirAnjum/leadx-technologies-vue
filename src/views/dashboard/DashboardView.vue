@@ -71,7 +71,6 @@
             <tr class="text-left text-xs uppercase tracking-wider text-brand-gray">
               <th class="px-4 py-3 font-semibold">Name</th>
               <th class="px-4 py-3 font-semibold">Email</th>
-              <th class="px-4 py-3 font-semibold">Subject</th>
               <th class="px-4 py-3 font-semibold">Message</th>
               <th class="px-4 py-3 font-semibold">Date</th>
               <th class="px-4 py-3 font-semibold text-right">Actions</th>
@@ -83,7 +82,6 @@
               <td class="px-4 py-3">
                 <a :href="`mailto:${c.email}`" class="text-brand-red hover:underline">{{ c.email }}</a>
               </td>
-              <td class="px-4 py-3 text-brand-gray">{{ c.subject || '—' }}</td>
               <td class="px-4 py-3 text-brand-gray max-w-xs truncate" :title="c.message">{{ c.message }}</td>
               <td class="px-4 py-3 text-brand-gray whitespace-nowrap">{{ formatDate(c.createdAt) }}</td>
               <td class="px-4 py-3 text-right">
@@ -116,7 +114,7 @@ const filtered = computed(() => {
   const q = search.value.trim().toLowerCase();
   if (!q) return contacts.value;
   return contacts.value.filter(c =>
-    [c.name, c.email, c.subject, c.message].filter(Boolean).some(v => String(v).toLowerCase().includes(q))
+    [c.name, c.email, c.message].filter(Boolean).some(v => String(v).toLowerCase().includes(q))
   );
 });
 const latest = computed(() =>
@@ -144,9 +142,9 @@ async function load() {
     error.value = e?.message || 'Failed to load contacts';
     // Fallback dummy data so the UI is still browsable in dev.
     contacts.value = [
-      { id: 1, name: 'Jane Cooper', email: '[email protected]', subject: 'Cloud migration', message: 'Looking to migrate our legacy CRM to Azure.', createdAt: new Date().toISOString() },
-      { id: 2, name: 'Marcus Liu', email: '[email protected]', subject: 'Custom development', message: 'Need a quote for a Vue + .NET portal.', createdAt: new Date(Date.now() - 86400000).toISOString() },
-      { id: 3, name: 'Priya Shah', email: '[email protected]', subject: 'Salesforce', message: 'Integration with our ERP system.', createdAt: new Date(Date.now() - 3 * 86400000).toISOString() }
+      { id: 1, name: 'Jane Cooper', email: '[email protected]',message: 'Looking to migrate our legacy CRM to Azure.', createdAt: new Date().toISOString() },
+      { id: 2, name: 'Marcus Liu', email: '[email protected]', message: 'Need a quote for a Vue + .NET portal.', createdAt: new Date(Date.now() - 86400000).toISOString() },
+      { id: 3, name: 'Priya Shah', email: '[email protected]', message: 'Integration with our ERP system.', createdAt: new Date(Date.now() - 3 * 86400000).toISOString() }
     ];
   } finally {
     loading.value = false;

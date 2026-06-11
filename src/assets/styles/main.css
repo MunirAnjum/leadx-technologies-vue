@@ -14,13 +14,16 @@
   h1,h2,h3,h4 { @apply font-display tracking-tight; }
 
 .btn-primary {
-  @apply inline-flex items-center gap-2 bg-brand-dark text-white px-6 py-3 rounded-full font-semibold hover:bg-[#1E293B] transition w-fit;
+  @apply inline-flex items-center gap-2 bg-brand-dark text-white px-6 py-3 rounded-[8px] font-semibold hover:bg-[#1E293B] transition w-fit;
 }
  .btn-secondary {
-  @apply btn bg-white/80 text-brand-dark border border-brand-dark/10 hover:border-brand-dark/30 hover:bg-white transition-all duration-300;
+  @apply btn bg-white/80 text-brand-dark border border-brand-dark/10 rounded-[8px] hover:border-brand-dark/30 hover:bg-white transition-all duration-300;
 }
 .btn-outline {
   @apply inline-flex items-center gap-2 border border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-brand-dark transition;
+}
+.contact-label{
+    @apply text-brand-dark;
 }
 .container-x { @apply max-w-7xl mx-auto px-6; }
   /* Floating-label inputs (re-used in Contact form) */
@@ -48,11 +51,11 @@
   .section-muted    { @apply bg-brand-light/30; }
   .section-soft     { @apply bg-brand-light/20; }
   /* ----- Hero (dark, rounded bottom) ----- */
-  .hero-dark        { @apply relative py-32 overflow-hidden rounded-b-[8px]; background-image: url('/src/assets/images/background-image.png');
+  .hero-dark        { @apply relative py-28 overflow-hidden rounded-b-[8px]; background-image: url('/src/assets/images/background-image.png');
                         background-size: cover; background-position: center; background-repeat: no-repeat;}
   .hero-dark__bg    { @apply absolute inset-0 overflow-hidden pointer-events-none; }
-  .hero-glow-red    { @apply absolute -top-40 -right-40 w-[700px] h-[700px] rounded-full bg-brand-red/15 blur-[140px]; }
-  .hero-glow-white  { @apply absolute -bottom-40 -left-40 w-[600px] h-[600px] bg-white/5 blur-[120px]; }
+  /* .hero-glow-red    { @apply absolute -top-40 -right-40 w-[700px] h-[700px] rounded-full bg-brand-red/15 blur-[140px]; }
+  .hero-glow-white  { @apply absolute -bottom-40 -left-40 w-[600px] h-[600px] bg-white/5 blur-[120px]; } */
   .hero-grid-dots   { @apply absolute inset-0 opacity-[0.03] bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px]; }
   /* ----- Eyebrow chips ----- */
   .eyebrow {
@@ -109,12 +112,12 @@
   }
   /* ----- Final CTA panel ----- */
   .cta-panel {
-    @apply rounded-3xl bg-brand-dark text-white p-10 md:p-16 text-center
+    @apply rounded-3xl bg-brand-dark/95 text-white p-10 md:p-16 text-center
            flex flex-col items-center gap-5 relative overflow-hidden;
   }
-  .cta-panel__glow {
+  /* .cta-panel__glow {
     @apply absolute -top-24 -right-24 w-64 h-64 rounded-full bg-brand-red/20 blur-3xl pointer-events-none;
-  }
+  } */
   .cta-title {
     @apply font-display text-3xl sm:text-4xl font-bold relative z-10
   }

@@ -1,18 +1,15 @@
 <template>
-  <div class="overflow-hidden bg-white px-4 sm:px-16 lg:px-14 text-brand-dark font-sans">
+  <div class="page-wrap">
     <!-- Hero -->
     <section class="hero-dark">
-      <!-- <div class="absolute inset-0 overflow-hidden pointer-events-none">
-        <div class="absolute -top-40 -right-40 w-[700px] h-[700px] rounded-full bg-brand-red/15 blur-[140px]"></div>
-        <div class="absolute -bottom-40 -left-40 w-[600px] h-[600px] rounded-full bg-white/5 blur-[120px]"></div>
-      </div> -->
-      <div class="max-w-7xl mx-auto px-6 pt-20 relative z-10">
+      <div class="container-x pt-20 relative z-10">
         <div class="max-w-4xl mx-auto">
-          <span class="inline-flex gap-2 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider bg-brand-red/15 border border-brand-red/20 text-brand-red uppercase mb-6">
+          <span class="eyebrow-dark mb-6">
             <Sparkles class="w-3.5 h-3.5" /> Proven Success
           </span>
-          <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1] mb-6">
-            Our Case Studies
+          <h1 class="h-hero text-white mb-6">
+            Our 
+            <span class="text-gradient-red">Case Studies</span>
           </h1>
           <p class="text-white/70 text-lg leading-relaxed max-w-3xl">
             See how we partner with forward-thinking organizations to modernize platforms, integrate complex systems, and deliver measurable business outcomes.
@@ -21,11 +18,11 @@
       </div>
     </section>
     <!-- Case Studies -->
-    <div class="flex flex-col gap-28 md:gap-36">
+    <div class="flex flex-col gap-28 mt-[3rem] mx-[8rem]">
       <section
         v-for="(study, index) in studies"
         :key="index"
-        class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center pt-6"
+        class="border border-line-gray rounded-[20px] grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center pt-6 p-10 bg-brand-gray/5"
       >
         <!-- Left: Title + Description + CTA -->
         <div :class="['lg:col-span-5 flex flex-col gap-6', index % 2 === 1 ? 'lg:order-last' : '']">
@@ -76,14 +73,13 @@
       </section>
     </div>
     <!-- Final CTA -->
-    <section class="py-16 md:py-24 bg-brand-light/20">
-      <div class="max-w-5xl mx-auto px-6">
-        <div class="mt-28 bg-brand-dark rounded-3xl p-10 md:p-16 text-white text-center flex flex-col items-center gap-5 relative overflow-hidden">
-          <div class="absolute -top-24 -right-24 w-64 h-64 rounded-full bg-brand-red/20 blur-3xl pointer-events-none"></div>
-          <h2 class="font-display text-3xl sm:text-4xl font-bold relative z-10">
+    <section class="section-sm section-soft">
+      <div class="container-narrow">
+        <div class="cta-panel">
+          <h2 class="cta-title">
             Want to learn more about how we help clients achieve their goals?
           </h2>
-          <p class="max-w-2xl text-white/80 text-sm sm:text-base relative z-10">
+          <p class="cta-subtitle">
             Let's talk through your roadmap and explore how our team can accelerate your next initiative.
           </p>
           <router-link to="/contact" class="btn-secondary">

@@ -82,13 +82,13 @@
     </section>
 
     <!-- CTA -->
-    <section class="section-sm">
+    <section class="section-sm section-soft">
       <div class="container-narrow">
         <div class="cta-panel">
-          <h2 class="font-display text-3xl sm:text-4xl font-bold relative z-10">
+          <h2 class="cta-title">
             Ready To Build AI-Powered Solutions?
           </h2>
-          <p class="max-w-2xl text-white/80 text-sm sm:text-base relative z-10">
+          <p class="cta-subtitle">
             Work with LeadX AI consultants to design, develop, and deploy intelligent systems
             tailored to your business goals.
           </p>

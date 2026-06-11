@@ -1,9 +1,10 @@
 <script setup lang="ts"></script>
 
 <template>
-  <UtilityBar />
   <TheHeader />
-  <main><RouterView /></main>
+  <main class="pt-[110px]">
+    <RouterView />
+  </main>
   <TheFooter />
 </template>
 

@@ -1,12 +1,7 @@
 <template>
-  <div class="overflow-hidden bg-white item-center sm:px-18 lg:px-16 text-brand-dark font-sans">
+  <div class="page-wrap">
     <!-- HERO -->
     <section class="relative py-16 lg:py-24 xl:py-28 bg-gradient-to-b from-brand-gray/50 to-white rounded-b-[50px]">
-      <!-- <div class="absolute inset-0 overflow-hidden pointer-events-none">
-        <div class="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-brand-red/5 blur-[120px]"></div>
-        <div class="absolute top-[60%] -left-40 w-[500px] h-[500px] rounded-full bg-brand-dark/5 blur-[100px]"></div>
-        <div class="absolute right-10 top-20 w-44 h-44 opacity-[0.03] bg-[radial-gradient(#0A0A0A_2px,transparent_2px)] [background-size:16px_16px]"></div>
-      </div> -->
       <div class="max-w-7xl mx-auto px-6 relative z-10">
         <div class="max-w-4xl mx-auto">
           <div class="lg:col-span-6 flex mt-28 flex-col items-start gap-6">

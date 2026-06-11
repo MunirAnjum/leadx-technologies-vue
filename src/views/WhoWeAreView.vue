@@ -126,7 +126,6 @@
     <section class="section-sm section-soft">
       <div class="container-narrow">
         <div class="cta-panel">
-          <div class="cta-panel__glow"></div>
           <h2 class="cta-title">
             Have a project in mind? Let's talk.
           </h2>
@@ -139,7 +138,6 @@
         </div>
       </div>
     </section>
-
   </div>
 </template>
 

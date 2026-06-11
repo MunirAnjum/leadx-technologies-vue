@@ -22,55 +22,60 @@
         </router-link>
 
         <ul class="hidden lg:flex items-center gap-8 ml-12 font-sans text-sm font-medium">
-
-          <li v-for="link in navLinks" :key="link.name" class="relative py-1">
-
-            <!-- Dropdown -->
+          <li
+            v-for="link in navLinks"
+            :key="link.name"
+            class="relative py-1 transition-colors duration-300"
+          >
+            <!-- DROPDOWN -->
             <div v-if="link.type === 'dropdown'" class="relative services-dropdown">
               <button
                 @click="servicesDropdownOpen = !servicesDropdownOpen"
-                 :class="[
-                'flex items-center gap-2 transition-colors duration-300',
-              ]"
+                class="flex items-center gap-2 transition-colors duration-300"
+                :class="isActiveDropdown(link) || servicesDropdownOpen ? 'text-brand-red' : 'text-gray-900 hover:text-brand-red'"
               >
                 {{ link.name }}
-                 <svg
-                class="w-4 h-4 transition-transform"
-                :class="{ 'rotate-180': servicesDropdownOpen }"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
+
+                <svg
+                  class="w-4 h-4 transition-transform"
+                  :class="{ 'rotate-180 text-brand-red': servicesDropdownOpen }"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
               </button>
 
               <div
                 v-if="servicesDropdownOpen"
-                class="absolute top-full left-0 mt-4 w-80 bg-white shadow-xl border rounded-xl"
+                class="absolute top-full left-0 mt-4 w-80 bg-white shadow-xl border rounded-xl z-50"
               >
                 <router-link
                   v-for="item in link.children"
                   :key="item.path"
                   :to="item.path"
                   @click="servicesDropdownOpen = false"
-                  class="block px-6 py-4 hover:bg-gray-100"
+                  class="block px-6 py-4 hover:bg-gray-100 transition-colors"
                 >
                   {{ item.name }}
                 </router-link>
               </div>
             </div>
 
-            <!-- Normal link -->
+            <!-- NORMAL LINKS -->
             <router-link
               v-else
               :to="link.path"
-              class="text-gray-900"
+              class="transition-colors duration-300"
+              :class="route.path === link.path
+                ? 'text-brand-red'
+                : 'text-gray-900'"
             >
               {{ link.name }}
             </router-link>
@@ -121,19 +126,25 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
+import { useRoute } from 'vue-router'
+import { ref, onMounted, computed, onUnmounted } from 'vue';
 import UtilityBar from './UtilityBar.vue';
 import logo from '@/assets/images/leadx-logo.png'
 import { auth } from '@/utils/apiClient'
-import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { ArrowRight } from 'lucide-vue-next';
 const router = useRouter()
+const route = useRoute()
 
 const isLoggedIn = computed(() => auth.isAuthenticated())
 
 const isScrolled = ref(false);
 const mobileMenuOpen = ref(false);
+
+const isActiveDropdown = (link) => {
+  if (!link.children) return false
+  return link.children.some(child => child.path === route.path)
+}
 
 // Services dropdown state
 const dropdownRef = ref(null);
@@ -186,10 +197,10 @@ onMounted(() => {
   document.addEventListener('click', handleClickOutside);
 });
 
-onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll);
-  document.removeEventListener('click', handleClickOutside);
-});
+// onUnmounted(() => {
+//   window.removeEventListener('scroll', handleScroll);
+//   document.removeEventListener('click', handleClickOutside);
+// });
 </script>
 
 <style scoped>

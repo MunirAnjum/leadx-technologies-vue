@@ -1,13 +1,8 @@
 <template>
-  <div class="overflow-hidden bg-white sm:px-18 lg:px-16 text-brand-dark font-sans">
+  <div class="page-wrap">
     <!-- HERO -->
     <section class="relative py-16 lg:py-24 xl:py-28 bg-gradient-to-b from-brand-light to-white">
-      <div class="absolute inset-0 overflow-hidden pointer-events-none">
-        <div class="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-brand-red/5 blur-[120px]"></div>
-        <div class="absolute top-[60%] -left-40 w-[500px] h-[500px] rounded-full bg-brand-dark/5 blur-[100px]"></div>
-        <div class="absolute right-10 top-20 w-44 h-44 opacity-[0.03] bg-[radial-gradient(#0A0A0A_2px,transparent_2px)] [background-size:16px_16px]"></div>
-      </div>
-      <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="container-x relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           <div class="lg:col-span-6 flex flex-col items-start gap-6">
             <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide bg-brand-red/10 text-brand-red uppercase">
@@ -70,9 +65,8 @@
       </div>
     </section>
    <!-- WHAT WE DO -->
-  <section class="py-20 md:py-28 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
-
+  <section class="section bg-white">
+    <div class="container-x">
       <!-- Header -->
       <div class="text-center mb-14">
         <div class="flex items-center justify-center gap-4 mb-5">
@@ -99,10 +93,10 @@
         <div
           v-for="(service, index) in whatWeDo"
           :key="index"
-          class="group rounded-3xl border border-brand-dark/10 bg-white p-10 hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+          class="card card-hover group"
         >
           <div
-            class="w-20 h-20 rounded-2xl bg-brand-red/5 flex items-center justify-center text-brand-red mb-8 group-hover:bg-brand-red group-hover:text-white transition-all duration-300"
+            class="icon-badge-lg mb-8"
           >
             <component
               :is="service.icon"
@@ -111,7 +105,7 @@
             />
           </div>
 
-          <h3 class="font-display text-3xl font-bold text-brand-dark mb-5">
+          <h3 class="h-card mb-5">
             {{ service.title }}
           </h3>
 
@@ -151,7 +145,7 @@
   </section>
 
   <!-- LEADX AVAILABLE TO YOU -->
-  <section class="py-20 md:py-28 bg-brand-light/20">
+  <section class="section section-soft">
     <div class="max-w-7xl mx-auto px-6">
 
       <!-- Header -->
@@ -173,7 +167,7 @@
         <div
           v-for="(member, index) in leadxTeam"
           :key="index"
-          class="rounded-3xl border border-brand-dark/10 bg-white p-10 hover:-translate-y-2 hover:shadow-lg transition-all duration-300"
+          class="card card-hover"
         >
           <div class="text-brand-red mb-6">
             <component
@@ -206,8 +200,10 @@
     </div>
     </section>
     <!-- CLIENT MARQUEE -->
-    <section class="border-y border-brand-light py-10 bg-brand-light/20 overflow-hidden">
+    <section class="border-y border-brand-light py-10 px-6 sm:px-8 lg:px-16 bg-brand-light/20 overflow-hidden">
+      
       <div class="max-w-7xl mx-auto px-6 mb-6">
+        <div class="text-center mb-8">
         <h2 class="text-center font-display text-xs font-semibold tracking-widest text-brand-gray uppercase">
           Trusted By Industry Leaders & Innovative Teams
         </h2>
@@ -221,6 +217,7 @@
             </span>
           </div>
         </div>
+      </div>
       </div>
     </section>
     <!-- TESTIMONIALS -->
@@ -257,12 +254,13 @@
       </div>
     </section>
     <!-- FINAL CTA -->
-    <section class="py-16 md:py-24 bg-brand-light/20">
-      <div class="max-w-5xl mx-auto px-6">
-        <div class="rounded-3xl bg-brand-dark text-white p-10 md:p-16 text-center flex flex-col items-center gap-5 relative overflow-hidden">
-          <div class="absolute -top-24 -right-24 w-64 h-64 rounded-full bg-brand-red/20 blur-3xl pointer-events-none"></div>
-          <h2 class="font-display text-3xl sm:text-4xl font-bold relative z-10">Have a project in mind? Let's talk.</h2>
-          <p class="max-w-2xl text-white/80 text-sm sm:text-base relative z-10">
+    <section class="section-sm bg-white">
+      <div class="container-narrow">
+        <div class="cta-panel">
+          <h2 class="cta-title">
+            Have a project in mind? Let's talk.
+          </h2>
+          <p class="cta-subtitle">
             Our seasoned professionals are ready to help your business devise and implement scaling digital solutions.
           </p>
           <router-link to="/contact" class="btn-secondary">

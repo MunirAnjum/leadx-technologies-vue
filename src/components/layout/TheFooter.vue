@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-brand-dark text-white/80 border-t border-white/10 font-sans">
+  <footer class="bg-brand-dark/95 text-white/80 border-t border-white/10 font-sans">
     <!-- Main Footer Container -->
 
     <div class="max-w-7xl mx-auto px-6 py-16 md:py-20 flex flex-col gap-y-20">
@@ -14,7 +14,7 @@
         <div class="lg:col-span-3 flex flex-col gap-5">
           <h4 class="font-display text-white text-sm font-semibold tracking-wider uppercase select-none">
             LeadX Technologies
-          </h4>        
+          </h4>
           <p class="text-sm text-brand-gray leading-relaxed max-w-sm">
             At LeadX Technologies, we are passionate about engineering next-generation software architectures, modern cloud solutions, and systems integration that drive enterprise growth.
           </p>
@@ -118,9 +118,6 @@
           </li>
           <li>
             <router-link to="/contact" class="hover:text-white transition-colors focus:outline-none">Terms of Service</router-link>
-          </li>
-          <li>
-            <router-link to="/contact" class="hover:text-white transition-colors focus:outline-none">SLA Agreement</router-link>
           </li>
         </ul>
       </div>
