@@ -99,7 +99,7 @@
 
         <router-link
           v-else
-          to="/dashboard"
+          to="/admin"
           class="inline-flex items-center gap-2 bg-brand-red text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-red-700 transition"
         >
           Dashboard
@@ -126,12 +126,11 @@
 </template>
 
 <script setup>
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { ref, onMounted, computed, onUnmounted } from 'vue';
 import UtilityBar from './UtilityBar.vue';
 import logo from '@/assets/images/leadx-logo.png'
 import { auth } from '@/utils/apiClient'
-import { useRouter } from 'vue-router'
 import { ArrowRight } from 'lucide-vue-next';
 const router = useRouter()
 const route = useRoute()

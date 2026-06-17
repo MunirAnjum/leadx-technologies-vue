@@ -12,7 +12,7 @@
 
 <script setup>
 import { RouterView } from 'vue-router'
-import UtilityBar from '@/components/layout/UtilityBar.vue'
-import TheHeader from '@/components/layout/TheHeader.vue'
-import TheFooter from '@/components/layout/TheFooter.vue'
+import UtilityBar from '@/components/UtilityBar.vue'
+import TheHeader from '@/components/TheHeader.vue'
+import TheFooter from '@/components/TheFooter.vue'
 </script>

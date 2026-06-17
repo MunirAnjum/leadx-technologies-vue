@@ -1,13 +1,16 @@
 <template>
-  <div class="pt-[110px] md:pt-[130px] min-h-screen bg-white text-brand-dark font-sans pb-20">
-    <div class="max-w-7xl mx-auto px-6">
+  <div class="page-wrap py-20">
+    <div class="container-x">
       <!-- Header -->
       <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
         <div class="flex flex-col gap-2">
-          <span class="inline-flex w-fit items-center px-3 py-1 rounded-full text-xs font-semibold bg-brand-red/10 text-brand-red uppercase tracking-wider">
+          <span class="eyebrow-dark w-fit">
+            <LayoutDashboard class="w-3.5 h-3.5" />
             Admin Dashboard
           </span>
-          <h1 class="font-display text-3xl sm:text-4xl font-bold tracking-tight">Contact Submissions</h1>
+          <h1 class="h-hero text-brand-dark">Contact
+            <span class="text-gradient-red">Submissions</span>
+          </h1>
           <p class="text-brand-gray text-sm">
             Signed in as <strong>{{ user?.email }}</strong>
           </p>
@@ -54,6 +57,9 @@
         />
       </div>
       <!-- States -->
+      <div v-if="successMessage" class="mb-4 p-3 rounded-lg bg-green-100 text-green-700">
+        {{ successMessage }}
+      </div>
       <div v-if="loading" class="p-10 text-center text-brand-gray">Loading contacts…</div>
       <div v-else-if="error" class="p-6 rounded-2xl bg-brand-red/10 text-brand-red text-sm">
         {{ error }}
@@ -102,6 +108,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
+import {PanelTop, Settings, Shield, LayoutDashboard } from 'lucide-vue-next';
 import { api, auth, API_BASE_URL, type Contact } from '@/utils/apiClient';
 const router = useRouter();
 const apiBase = API_BASE_URL;
@@ -110,6 +117,8 @@ const loading = ref(false);
 const error = ref('');
 const search = ref('');
 const user = ref(auth.getUser());
+const successMessage = ref('')
+
 const filtered = computed(() => {
   const q = search.value.trim().toLowerCase();
   if (!q) return contacts.value;
@@ -140,12 +149,6 @@ async function load() {
       return;
     }
     error.value = e?.message || 'Failed to load contacts';
-    // Fallback dummy data so the UI is still browsable in dev.
-    contacts.value = [
-      { id: 1, name: 'Jane Cooper', email: '[email protected]',message: 'Looking to migrate our legacy CRM to Azure.', createdAt: new Date().toISOString() },
-      { id: 2, name: 'Marcus Liu', email: '[email protected]', message: 'Need a quote for a Vue + .NET portal.', createdAt: new Date(Date.now() - 86400000).toISOString() },
-      { id: 3, name: 'Priya Shah', email: '[email protected]', message: 'Integration with our ERP system.', createdAt: new Date(Date.now() - 3 * 86400000).toISOString() }
-    ];
   } finally {
     loading.value = false;
   }
@@ -155,6 +158,10 @@ async function remove(c: Contact) {
   try {
     await api.deleteContact(c.id);
     contacts.value = contacts.value.filter(x => x.id !== c.id);
+    successMessage.value = 'Contact deleted successfully';
+    setTimeout(() => {
+      successMessage.value = ''
+    }, 3000);
   } catch (e: any) {
     alert(e?.message || 'Delete failed');
   }

@@ -5,7 +5,7 @@ export const authGuard: NavigationGuardWithThis<undefined> = (to) => {
     return { path: '/login', query: { redirect: to.fullPath } };
   }
   if (to.path === '/login' && auth.isAuthenticated()) {
-    return { path: '/dashboard' };
+    return { path: '/admin' };
   }
   return true;
 };

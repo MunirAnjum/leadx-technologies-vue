@@ -66,7 +66,7 @@ async function onSubmit() {
     const { token, user } = await api.login(email.value.trim(), password.value);
     auth.setToken(token);
     auth.setUser(user);
-    const redirect = (route.query.redirect as string) || '/dashboard';
+    const redirect = (route.query.redirect as string) || '/admin';
     router.push(redirect);
   } catch (e: any) {
     error.value = e?.message || 'Login failed';

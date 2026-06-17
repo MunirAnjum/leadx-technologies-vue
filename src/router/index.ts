@@ -14,14 +14,6 @@ const router = createRouter({
   history: createWebHistory(),
 
   routes: [
-    { path: '/login', name: 'login', component: () => import('@/views/auth/LoginView.vue') },
-  {
-    path: '/dashboard',
-    name: 'dashboard',
-    component: () => import('@/views/dashboard/DashboardView.vue'),
-    meta: { requiresAuth: true }
-  },
-    // Existing routes
     {
       path: '/',
       name: 'home',
@@ -62,6 +54,42 @@ const router = createRouter({
       path: '/contact',
       component: () => import('@/views/ContactView.vue'),
     },
+
+    { path: '/login',
+      name: 'login',
+      component: () => import('@/views/auth/LoginView.vue')
+    },
+
+    {
+      path: '/admin',
+      component: () => import('@/components/layouts/AdminLayout.vue'),
+      meta: { requiresAuth: true },
+
+      children: [
+        {
+          path: '',
+          component: () => import('@/views/dashboard/DashboardHome.vue')
+        },
+        {
+          path: 'contacts',
+          component: () => import('@/views/dashboard/ContactList.vue')
+        },
+        {
+          path: 'blogs',
+          component: () => import('@/views/dashboard/BlogList.vue')
+        },
+        {
+          path: 'create-blog',
+          component: () => import('@/views/dashboard/CreateBlog.vue')
+        },
+        {
+          path: 'edit-blog/:id',
+          component: () => import('@/views/dashboard/EditBlog.vue')
+        }
+      ]
+    },
+    
+
 
     // Service dropdown pages
     {

@@ -1,3 +1,5 @@
+// import type { promises } from "dns";
+// import { blob } from "stream/consumers";
 
 export const API_BASE_URL = 'https://localhost:44375/api';
 
@@ -62,6 +64,24 @@ export interface Contact {
   message: string;
   createdAt?: string;
 }
+export interface Blog {
+  id: number | string;
+  title: string;
+  summary: string;
+  content: string;
+  author: string;
+  category: string;
+  createdAt: string;
+  icon: string;
+}
+export interface CreateBlogDto {
+  title: string
+  summary: string
+  content: string
+  author: string
+  category: string
+  icon: string
+}
 export const api = {
   // ---- Auth ----
   async login(email: string, password: string): Promise<LoginResponse> {
@@ -77,5 +97,32 @@ export const api = {
   },
   deleteContact(id: Contact['id']): Promise<void> {
     return request<void>(`/contact/${id}`, { method: 'DELETE' });
-  }
+  },
+
+  // ---- Blogs ----
+  listBlogs(): Promise<Blog[]> {
+    return request<Blog[]>('/blog');
+  },
+
+  createBlog(blog: CreateBlogDto): Promise<void> {
+    return request<void>('/blog', {
+      method: 'POST',
+      body: JSON.stringify(blog)
+    });  
+  },
+
+  deleteBlog(id: Blog['id']): Promise<void> {
+    return request<void>(`/blog/${id}`, { method: 'DELETE' });
+  },
+
+  getBlog(id: number | string): Promise<Blog>{
+    return request<Blog>(`/blog/${id}`);
+  },
+
+  updateBlog(id: number | string, blog: CreateBlogDto): Promise<Blog> {
+    return request<Blog>(`/blog/${id}`, {
+      method: 'PUT',
+      body: JSON.stringify(blog)
+    });
+  },
 };
