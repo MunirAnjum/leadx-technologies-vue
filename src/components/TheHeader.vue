@@ -130,12 +130,12 @@ import { useRoute, useRouter } from 'vue-router'
 import { ref, onMounted, computed, onUnmounted } from 'vue';
 import UtilityBar from './UtilityBar.vue';
 import logo from '@/assets/images/leadx-logo.png'
-import { auth } from '@/utils/apiClient'
+import { auth, authState } from '@/utils/apiClient'
 import { ArrowRight } from 'lucide-vue-next';
 const router = useRouter()
 const route = useRoute()
 
-const isLoggedIn = computed(() => auth.isAuthenticated())
+const isLoggedIn = authState
 
 const isScrolled = ref(false);
 const mobileMenuOpen = ref(false);

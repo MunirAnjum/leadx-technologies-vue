@@ -69,6 +69,13 @@
                 Get Started <ArrowRight class="w-4 h-4" />
               </router-link>
             </div>
+            <router-link
+              :to="`/blog-detail/${post.id}`"
+              class="btn-secondary m-4"
+            >
+              Read More
+              <ArrowRight class="w-4 h-4" />
+            </router-link>
           </article>
         </div>
       </div>

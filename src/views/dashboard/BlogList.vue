@@ -20,7 +20,6 @@
         <router-link 
             to="/admin/create-blog" class="btn-primary">
             Create Blog
-            <ArrowRight class="h-4 w-4"/>
           </router-link>
       </div>
       <!-- Stat cards -->

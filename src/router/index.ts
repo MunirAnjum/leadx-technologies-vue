@@ -88,8 +88,10 @@ const router = createRouter({
         }
       ]
     },
-    
-
+    {
+      path: '/blog-detail/:id',
+      component: () => import(`@/components/BlogDetail.vue`)
+    },
 
     // Service dropdown pages
     {
@@ -118,7 +120,6 @@ const router = createRouter({
       
     },
   ],
-  
 
   scrollBehavior() {
     return { top: 0 } 

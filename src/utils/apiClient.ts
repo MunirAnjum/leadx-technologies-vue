@@ -11,28 +11,39 @@ export interface LoginResponse {
   };
 }
 
+import { ref } from 'vue'
+
+export const authState = ref(!!localStorage.getItem('auth_token'))
+
 const TOKEN_KEY = 'auth_token';
 const USER_KEY = 'auth_user';
 export const auth = {
   getToken(): string | null {
     return localStorage.getItem(TOKEN_KEY);
   },
-  setToken(token: string) {
-    localStorage.setItem(TOKEN_KEY, token);
-  },
+
   getUser(): { email: string; name?: string } | null {
     const raw = localStorage.getItem(USER_KEY);
     return raw ? JSON.parse(raw) : null;
   },
+
   setUser(user: { email: string; name?: string }) {
     localStorage.setItem(USER_KEY, JSON.stringify(user));
   },
+
   isAuthenticated(): boolean {
     return !!localStorage.getItem(TOKEN_KEY);
   },
+
+  setToken(token: string) {
+    localStorage.setItem(TOKEN_KEY, token)
+    authState.value = true
+  },
+
   logout() {
-    localStorage.removeItem(TOKEN_KEY);
-    localStorage.removeItem(USER_KEY);
+    localStorage.removeItem(TOKEN_KEY)
+    localStorage.removeItem(USER_KEY)
+    authState.value = false
   }
 };
 async function request<T>(path: string, init: RequestInit = {}): Promise<T> {
@@ -72,7 +83,6 @@ export interface Blog {
   author: string;
   category: string;
   createdAt: string;
-  icon: string;
 }
 export interface CreateBlogDto {
   title: string
@@ -80,7 +90,6 @@ export interface CreateBlogDto {
   content: string
   author: string
   category: string
-  icon: string
 }
 export const api = {
   // ---- Auth ----

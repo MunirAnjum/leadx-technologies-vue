@@ -34,12 +34,19 @@
             Category
           </label>
 
-          <input
+          <select
             v-model="form.category"
-            type="text"
             class="w-full border rounded-xl px-4 py-3"
             required
-          />
+          >
+            <option disabled value="">Select Category</option>
+            <option value="Cloud">Cloud</option>
+            <option value="Security">Security</option>
+            <option value="AI">AI</option>
+            <option value="Data">Data</option>
+            <option value="Engineering">Engineering</option>
+            <option value="Architecture">Architecture</option>
+          </select>
         </div>
 
         <!-- Author -->
@@ -54,23 +61,7 @@
             class="w-full border rounded-xl px-4 py-3"
           />
         </div>
-
-        <!-- Icon -->
-        <div>
-          <label class="block mb-2 font-semibold">
-            Icon
-          </label>
-
-          <select
-            v-model="form.icon"
-            class="w-full border rounded-xl px-4 py-3"
-          >
-            <option v-for="i in iconOptions" :key="i.value" :value="i.value">
-              {{ i.label }}
-            </option>
-          </select>
-        </div>
-
+        
         <!-- Summary -->
         <div>
           <label class="block mb-2 font-semibold">
@@ -118,17 +109,8 @@ const form = ref({
   category: '',
   author: 'LeadX Team',
   summary: '',
-  content: '',
-  icon: 'Cloud'
+  content: ''
 })
-  const iconOptions = [
-  { label: 'Cloud', value: 'Cloud' },
-  { label: 'Security', value: 'Shield' },
-  { label: 'AI', value: 'Cpu' },
-  { label: 'Database', value: 'Database' },
-  { label: 'Engineering', value: 'Code2' },
-  { label: 'Architecture', value: 'Layers' }
-];
 
 async function submitBlog() {
   try {
@@ -143,8 +125,7 @@ async function submitBlog() {
       category: '',
       author: '',
       summary: '',
-      content: '',
-      icon: ''      
+      content: ''     
     }
     router.push('/admin/blogs');
 
