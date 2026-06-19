@@ -205,7 +205,7 @@
 </template>
 
 <script setup>
-import {sendContactForm} from '@/api/contactApi';
+import {sendContactForm} from '@/temp_api/contactApi';
 import { ref, reactive } from 'vue';
 import { MapPin, Phone, Mail, CheckCircle2, Zap, Send, Loader2 } from 'lucide-vue-next';
 
