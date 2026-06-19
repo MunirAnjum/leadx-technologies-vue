@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-[110px] md:pt-[130px] min-h-screen bg-white text-brand-dark font-sans pb-20 bg-[url('/images/background.jpg')]">
+  <div class="pt-[110px] md:pt-[130px] min-h-screen bg-white text-brand-dark font-sans pb-20">
     <div class="max-w-7xl mx-auto px-6 relative z-10">
       <div class="flex flex-col items-center text-center max-w-3xl mx-auto gap-4 mb-20">
         <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-brand-red/10 text-brand-red uppercase tracking-wider">
