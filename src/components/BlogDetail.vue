@@ -71,7 +71,7 @@ onMounted(loadBlog)
 </script>
 
 <style>
-:deep(.ProseMirror img) {
+::deep(.ProseMirror img) {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
