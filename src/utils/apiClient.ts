@@ -1,7 +1,12 @@
 // import type { promises } from "dns";
 // import { blob } from "stream/consumers";
+import { ref } from 'vue'
 
-export const API_BASE_URL = 'https://localhost:44375/api';
+//export const API_BASE_URL = 'https://localhost:44375/api';
+export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+if (!API_BASE_URL) {
+  throw new Error('VITE_API_BASE_URL is not defined');
+}
 
 export interface LoginResponse {
   token: string;
@@ -10,8 +15,6 @@ export interface LoginResponse {
     name?: string;
   };
 }
-
-import { ref } from 'vue'
 
 export const authState = ref(!!localStorage.getItem('auth_token'))
 
@@ -74,6 +77,15 @@ export interface Contact {
   email: string;
   message: string;
   createdAt?: string;
+  company?: string;
+  consent: boolean;
+}
+export interface CreateContactDto {
+  name: string;
+  email: string;
+  company?: string;
+  message: string;
+  consent: boolean;
 }
 export interface Blog {
   id: number | string;
@@ -83,6 +95,8 @@ export interface Blog {
   author: string;
   category: string;
   createdAt: string;
+  readTime?: string;
+  date?: string;
 }
 export interface CreateBlogDto {
   title: string
@@ -101,6 +115,13 @@ export const api = {
   },
   
   // ---- Contacts ----
+  sendContact(contact: CreateContactDto): Promise<{ message: string }> {
+    return request<{ message: string }>('/contact', {
+      method: 'POST',
+      body: JSON.stringify(contact)
+    });
+  },
+
   listContacts(): Promise<Contact[]> {
     return request<Contact[]>('/contact');
   },

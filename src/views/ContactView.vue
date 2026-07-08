@@ -89,7 +89,7 @@
                 <input
                   type="text"
                   id="name"
-                  v-model="formData.name"
+                  v-model="submittedName"
                   required
                   class="peer w-full bg-brand-light/50 border border-brand-dark/15 rounded-xl px-4 py-4 pt-6 text-sm text-brand-dark font-medium placeholder-transparent focus:outline-none focus:border-brand-red focus:bg-white transition-all duration-200"
                   placeholder="Full Name"
@@ -188,7 +188,7 @@
             </h3>
             
             <p class="text-brand-gray text-base leading-relaxed max-w-md mb-8">
-              Thank you, <strong class="text-brand-dark">{{ formData.name }}</strong>! An Enterprise Solutions Architect from LeadX will review your project details and reach out within 24 hours.
+              Thank you, <strong class="text-brand-dark">{{ submittedName }}</strong>! An Enterprise Solutions Architect from LeadX will review your project details and reach out within 24 hours.
             </p>
             
             <button 
@@ -204,13 +204,14 @@
   </div>
 </template>
 
-<script setup>
-import {sendContactForm} from '@/api/ContactApi';
-import { ref, reactive } from 'vue';
-import { MapPin, Phone, Mail, CheckCircle2, Zap, Send, Loader2 } from 'lucide-vue-next';
+<script setup lang="ts">
+import { ref } from 'vue';
+import { MapPin, Phone, Mail, CheckCircle2, Zap } from 'lucide-vue-next';
+import { api } from '@/utils/apiClient';
 
 const loading = ref(false);
 const submitted = ref(false);
+const submittedName = ref('');
 
 const formData = ref({
   name: '',
@@ -230,42 +231,30 @@ const handleSubmit = async () => {
       company: formData.value.company,
       message: formData.value.message,
       consent: formData.value.consent
-    };  
-
-    const response = await sendContactForm(payload);
-
-    console.log("success", response.data);
-
-    setTimeout(() => {
-      loading.value = false;
-      submitted.value = true;
-    }, 1000);
-
-    // reset form
-    formData.value = {
-      name: "",
-      email: "",
-      company: "",
-      message: "",
-      consent: ""
     };
 
-  } catch(error) {
-    console.error("API Error:", error.response?.data || error.message);
-    alert("Failed to send message. Try again.");
-  } finally{
+    await api.sendContact(payload);
+
+    submittedName.value = formData.value.name;
+    submitted.value = true;
+  } catch (error: any) {
+    console.error('API Error:', error?.message || error);
+    alert('Failed to send message. Try again.');
+  } finally {
     loading.value = false;
   }
-
 };
 
 const resetForm = () => {
   submitted.value = false;
-  formData.name = '';
-  formData.email = '';
-  formData.company = '';
-  formData.message = '';
-  formData.consent = '';
+  submittedName.value = '';
+  formData.value = {
+    name: '',
+    email: '',
+    company: '',
+    message: '',
+    consent: false
+  };
 };
 
 const guarantees = [
@@ -276,16 +265,6 @@ const guarantees = [
 </script>
 
 <style scoped>
-/* input:focus ~ label,
-input:not(:placeholder-shown) ~ label,
-textarea:focus ~ label,
-textarea:not(:placeholder-shown) ~ label {
-  top: 6px;
-  font-size: 10px;
-  letter-spacing: 0.05em;
-  font-weight: 600;
-  color: #E63329;
-} */
 .fade-scale-enter-active,
 .fade-scale-leave-active {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
