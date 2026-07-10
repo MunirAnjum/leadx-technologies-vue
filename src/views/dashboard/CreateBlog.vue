@@ -106,6 +106,7 @@ const router = useRouter();
 
 const form = ref({
   title: '',
+  slug: '',
   category: '',
   author: 'LeadX Team',
   summary: '',
@@ -122,6 +123,7 @@ async function submitBlog() {
 
     form.value = {
       title: '',
+      slug: '',
       category: '',
       author: '',
       summary: '',

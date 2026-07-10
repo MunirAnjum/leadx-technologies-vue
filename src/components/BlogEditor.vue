@@ -35,7 +35,7 @@
       <button 
         type="button"
         @click="editor.chain().focus().toggleOrderedList().run()" 
-        :class="{ 'is-active': editor.isActive('orderList') }"
+        :class="{ 'is-active': editor.isActive('orderedList') }"
       >
         <ListOrdered class="h-4 w-4" />
       </button>
@@ -116,7 +116,8 @@ import { ref, computed, watch } from 'vue'
 import { useEditor, EditorContent } from '@tiptap/vue-3'
 import StarterKit from '@tiptap/starter-kit'
 import Image from '@tiptap/extension-image'
-import TextAlign from '@tiptap/extension-text-align'  
+import TextAlign from '@tiptap/extension-text-align'
+import { API_BASE_URL } from '@/utils/apiClient'
 import { ImagePlus, Bold, Italic, Undo, Redo, List, ListOrdered, AlignLeft,
   AlignCenter,
   AlignRight,
@@ -169,7 +170,7 @@ async function uploadImage(file: File) {
   const formData = new FormData()
   formData.append('file', file)
 
-  const res = await fetch('https://localhost:44375/api/upload', {
+  const res = await fetch(`${API_BASE_URL}/upload`, {
     method: 'POST',
     body: formData,
   })
@@ -220,7 +221,7 @@ function setHeadingLevel(event: Event) {
     editor.value
       .chain()
       .focus()
-      .toggleHeading({ level: level as 1 | 2 | 3 | 4 | 5 | 6 })
+      .setHeading({ level: level as 1 | 2 | 3 | 4 | 5 | 6 })
       .run()
   }
 }
@@ -275,63 +276,63 @@ function setHeadingLevel(event: Event) {
   overflow-y: auto;
 }
 
-::deep(.ProseMirror) {
+:deep(.ProseMirror) {
   padding: 24px;
   min-height: 350px;
   outline: none;
 }
 /* Basic styling for Tiptap's output tags inside the editor */
-::deep(.editor-input:focus) {
+:deep(.editor-input:focus) {
   outline: none;
 }
 
-::deep(h1) {
+:deep(h1) {
   font-size: 2.5rem;
   font-weight: 700;
   margin: 1rem 0;
 }
 
-::deep(h2) {
+:deep(h2) {
   font-size: 2rem;
   font-weight: 700;
   margin: 0.875rem 0;
 }
 
-::deep(h3) {
+:deep(h3) {
   font-size: 1.75rem;
   font-weight: 600;
   margin: 0.75rem 0;
 }
 
-::deep(h4) {
+:deep(h4) {
   font-size: 1.5rem;
   font-weight: 600;
   margin: 0.75rem 0;
 }
 
-::deep(h5) {
+:deep(h5) {
   font-size: 1.25rem;
   font-weight: 600;
   margin: 0.5rem 0;
 }
 
-::deep(h6) {
+:deep(h6) {
   font-size: 1rem;
   font-weight: 600;
   margin: 0.5rem 0;
 }
 
-::deep(ul) {
+:deep(ul) {
   padding-left: 20px;
   list-style-type: disc;
 }
 
-::deep(ol) {
+:deep(ol) {
   padding-left: 20px;
   list-style-type: decimal;
 }
 
-::deep(li) {
+:deep(li) {
   margin: 0.25rem 0;
 }
 

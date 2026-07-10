@@ -60,7 +60,7 @@
         </p>
       </div>
       <div v-else-if="filtered.length === 0" class="p-10 text-center text-brand-gray rounded-2xl bg-brand-light border border-brand-light">
-        No contact submissions found.
+        No blog found.
       </div>
       <div v-else class="overflow-x-auto rounded-2xl border border-gray-200 bg-white">  
         <table class="min-w-full text-sm">

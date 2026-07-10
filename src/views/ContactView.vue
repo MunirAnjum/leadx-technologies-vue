@@ -89,7 +89,7 @@
                 <input
                   type="text"
                   id="name"
-                  v-model="submittedName"
+                  v-model="formData.name"
                   required
                   class="peer w-full bg-brand-light/50 border border-brand-dark/15 rounded-xl px-4 py-4 pt-6 text-sm text-brand-dark font-medium placeholder-transparent focus:outline-none focus:border-brand-red focus:bg-white transition-all duration-200"
                   placeholder="Full Name"
