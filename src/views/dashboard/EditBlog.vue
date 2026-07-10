@@ -81,6 +81,7 @@ const route = useRoute()
 const loading = ref(false)
 const form = ref({
   title: '',
+  slug: '',
   category: '',
   author: 'LeadX Team',
   summary: '',
@@ -92,6 +93,7 @@ async function loadBlog() {
     const blog = await api.getBlog(blogId as string)
     form.value = {
       title: blog.title,
+      slug: blog.slug,
       summary: blog.summary,
       content: blog.content,
       author: blog.author,

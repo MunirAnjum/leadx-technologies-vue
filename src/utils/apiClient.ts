@@ -90,6 +90,7 @@ export interface CreateContactDto {
 export interface Blog {
   id: number | string;
   title: string;
+  slug: string;
   summary: string;
   content: string;
   author: string;
