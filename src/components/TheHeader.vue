@@ -110,7 +110,7 @@
           <router-link
             v-if="isLoggedIn"
             to="/admin"
-            class="inline-flex items-center gap-2 bg-brand-red text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-red-700 transition"
+            class="inline-flex items-center bg-brand-red text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-red-700 transition"
           >
             Dashboard
           </router-link>
@@ -176,10 +176,10 @@
         v-if="mobileMenuOpen"
         class="lg:hidden fixed top-[102px] left-0 w-full max-h-[calc(100vh-102px)] overflow-y-auto bg-white text-brand-dark z-50 border-t border-brand-light shadow-xl"
       >
-        <div class="px-5 py-6 flex flex-col gap-2">
+        <div class="moblie-menu px-5 flex flex-col">
           <!-- Normal links -->
           <template v-for="link in navLinks" :key="link.name">
-            <div v-if="link.type === 'dropdown'" class="border-b border-gray-100 pb-2">
+            <div v-if="link.type === 'dropdown'">
               <button
                 type="button"
                 @click="mobileServicesOpen = !mobileServicesOpen"
@@ -231,7 +231,7 @@
           <div class="pt-5 flex flex-col gap-3">
             <router-link
               to="/contact"
-              class="btn-primary justify-center"
+              class="inline-flex btn-primary justify-center"
               @click="closeMobileMenu"
             >
               Contact Us

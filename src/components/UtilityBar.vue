@@ -3,10 +3,10 @@
     class="border-b border-brand-red/30 pt-2 pb-1 text-xs transition-all duration-300"
   >
     <div
-      class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-0"
+      class="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center"
     >
       <!-- Left Side -->
-      <div class="flex items-center flex-wrap justify-center md:justify-start">
+      <div class="flex items-center whitespace-nowrap">
 
         <!-- Phone -->
         <a
@@ -33,7 +33,7 @@
       </div>
 
       <!-- Right Side -->
-      <div class="flex items-center">
+      <div class="hidden sm:flex items-center shrink-0">
 
         <!-- LinkedIn -->
         <a

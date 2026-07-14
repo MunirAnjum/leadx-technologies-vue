@@ -68,7 +68,7 @@
     >
       <aside
         v-if="sidebarOpen"
-        class="fixed top-0 left-0 z-50 w-72 max-w-[85vw] h-screen bg-brand-dark/95 text-white flex flex-col lg:hidden"
+        class="top-50 left-0 z-50 w-50 max-w-[85vw] h-screen bg-brand-dark/95 text-white flex flex-col lg:hidden"
       >
         <div class="p-6 border-b border-white/10 flex items-center justify-between">
           <h2 class="font-bold text-xl">
@@ -127,6 +127,7 @@
       <!-- Mobile top bar -->
       <div class="lg:hidden sticky top-0 z-30 bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between">
         <button
+        v-if="!sidebarOpen"
           type="button"
           class="w-11 h-11 rounded-xl border border-gray-200 flex items-center justify-center bg-white"
           @click="toggleSidebar"
