@@ -55,14 +55,14 @@
 
               <div
                 v-if="servicesDropdownOpen"
-                class="absolute top-full left-0 mt-4 w-80 bg-white shadow-xl border rounded-xl z-50 overflow-hidden"
+                class="absolute top-full left-0 mt-8 w-80 py-4 bg-white shadow-xl rounded-xl z-50 overflow-hidden"
               >
                 <router-link
                   v-for="item in link.children"
                   :key="item.path"
                   :to="item.path"
                   @click="servicesDropdownOpen = false"
-                  class="block px-6 py-4 hover:bg-gray-100 transition-colors"
+                  class="block px-6 pb-2 pt-2 hover:bg-gray-100 transition-colors"
                 >
                   {{ item.name }}
                 </router-link>
@@ -88,32 +88,32 @@
             <ArrowRight class="h-4 w-4" />
           </router-link>
 
-          <router-link
+          <!-- <router-link
             v-if="!isLoggedIn"
             to="/login"
             class="btn-primary"
           >
             Login
-          </router-link>
+          </router-link> -->
 
-          <router-link
+          <!-- <router-link
             v-else
             to="/admin"
             class="inline-flex items-center gap-2 bg-brand-red text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-red-700 transition"
           >
             Dashboard
-          </router-link>
+          </router-link> -->
         </div>
 
         <!-- Mobile right actions -->
         <div class="flex items-center gap-3 lg:hidden">
-          <router-link
+          <!-- <router-link
             v-if="isLoggedIn"
             to="/admin"
             class="inline-flex items-center bg-brand-red text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-red-700 transition"
           >
             Dashboard
-          </router-link>
+          </router-link> -->
 
           <button
             type="button"
@@ -174,7 +174,7 @@
     >
       <div
         v-if="mobileMenuOpen"
-        class="lg:hidden fixed top-[102px] left-0 w-full max-h-[calc(100vh-102px)] overflow-y-auto bg-white text-brand-dark z-50 border-t border-brand-light shadow-xl"
+        class="lg:hidden fixed top-[102px] left-0 w-full max-h-[calc(100vh-102px)] overflow-y-auto bg-white text-brand-dark z-50 shadow-xl"
       >
         <div class="moblie-menu px-5 flex flex-col">
           <!-- Normal links -->
@@ -220,7 +220,7 @@
               v-else
               :to="link.path"
               @click="closeMobileMenu"
-              class="py-3 border-b border-gray-100 font-medium transition"
+              class="py-3 font-medium transition"
               :class="route.path === link.path ? 'text-brand-red' : 'text-brand-dark'"
             >
               {{ link.name }}
@@ -228,7 +228,7 @@
           </template>
 
           <!-- Mobile actions -->
-          <div class="pt-5 flex flex-col gap-3">
+          <div class="pt-5 pb-5 inline-flex items-center justify-center flex-col gap-3">
             <router-link
               to="/contact"
               class="inline-flex btn-primary justify-center"
@@ -238,7 +238,7 @@
               <ArrowRight class="h-4 w-4" />
             </router-link>
 
-            <router-link
+            <!-- <router-link
               v-if="!isLoggedIn"
               to="/login"
               class="inline-flex items-center justify-center rounded-full border border-brand-red text-brand-red px-5 py-3 text-sm font-semibold hover:bg-brand-red hover:text-white transition"
@@ -254,7 +254,7 @@
               @click="closeMobileMenu"
             >
               Dashboard
-            </router-link>
+            </router-link> -->
           </div>
         </div>
       </div>

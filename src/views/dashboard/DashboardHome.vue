@@ -59,7 +59,7 @@ const loadDashboard = async () => {
     blogs.value = blogsData
   } catch (e: any) {
     if (e?.message === 'Unauthorized') {
-      router.push('/login')
+      router.push({name: 'admin-login'})
       return
     }
 

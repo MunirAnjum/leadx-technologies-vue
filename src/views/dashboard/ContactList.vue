@@ -31,7 +31,7 @@
         </div>
       </div>
       <!-- Stat cards -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+      <div class="hidden sm:grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
         <div class="p-6 rounded-2xl bg-brand-light border border-brand-light">
           <p class="text-xs uppercase tracking-wider text-brand-gray font-semibold">Total</p>
           <p class="font-display text-3xl font-bold mt-2">{{ contacts.length }}</p>
@@ -145,7 +145,7 @@ async function load() {
     contacts.value = await api.listContacts();
   } catch (e: any) {
     if (e?.message === 'Unauthorized') {
-      router.push('/login');
+      router.push({name: 'admin-login'});
       return;
     }
     error.value = e?.message || 'Failed to load contacts';
@@ -168,7 +168,7 @@ async function remove(c: Contact) {
 }
 function logout() {
   auth.logout();
-  router.push('/login');
+  router.push({name: 'admin-login'});
 }
 onMounted(load);
 </script>

@@ -50,41 +50,48 @@ const router = createRouter({
       component: () => import('@/views/ContactView.vue'),
     },
 
-    { path: '/login',
-      name: 'login',
+    { path: '/admin/login',
+      name: 'admin-login',
       component: () => import('@/views/auth/LoginView.vue')
     },
 
     {
       path: '/admin',
+      name: 'admin-dashboard',
       component: () => import('@/components/layouts/AdminLayout.vue'),
       meta: { requiresAuth: true },
 
       children: [
         {
           path: '',
+          name: 'dashboard-home',
           component: () => import('@/views/dashboard/DashboardHome.vue')
         },
         {
           path: 'contacts',
+          name: 'admin-contacts',
           component: () => import('@/views/dashboard/ContactList.vue')
         },
         {
           path: 'blogs',
+          name: 'admin-blog',
           component: () => import('@/views/dashboard/BlogList.vue')
         },
         {
           path: 'create-blog',
+          name: 'admin-create-blog',
           component: () => import('@/views/dashboard/CreateBlog.vue')
         },
         {
           path: 'edit-blog/:id',
+          name: 'admin-edit-blog',
           component: () => import('@/views/dashboard/EditBlog.vue')
         }
       ]
     },
     {
       path: '/blog-detail/:id',
+      name: 'admin-detail-blog',
       component: () => import(`@/components/BlogDetail.vue`)
     },
 

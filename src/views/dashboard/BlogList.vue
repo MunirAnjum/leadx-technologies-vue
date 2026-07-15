@@ -4,7 +4,7 @@
       <!-- Hero -->
       <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
         <div class="flex flex-col gap-2">
-          <span class="eyebrow-dark mb-6 w-fit">
+          <span class="eyebrow-dark w-fit">
             <BookOpen class="w-3.5 h-3.5"/>
               Blog Management
           </span>
@@ -15,6 +15,20 @@
             Signed in as <strong>{{ user?.email }}</strong>
           </p>
         </div>
+        <div class="flex items-center gap-3">
+          <button
+            @click="load"
+            class="inline-flex items-center gap-2 bg-white border border-gray-200 text-brand-dark px-4 py-2 rounded-full text-sm font-semibold hover:border-brand-red hover:text-brand-red transition"
+          >
+            Refresh
+          </button>
+          <button
+            @click="logout"
+            class="inline-flex items-center gap-2 bg-brand-red text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-red-700 hover:shadow-lg hover:shadow-brand-red/20 active:scale-95 transition-all duration-200"
+          >
+            Sign Out
+          </button>
+        </div>
       </div>
       <div class="flex items-center pb-4">
         <router-link 
@@ -23,7 +37,7 @@
           </router-link>
       </div>
       <!-- Stat cards -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+      <div class="hidden sm:grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
         <div class="p-6 rounded-2xl bg-brand-light border border-brand-light">
           <p class="text-xs uppercase tracking-wider text-brand-gray font-semibold">Total</p>
           <p class="font-display text-3xl font-bold mt-2">{{ blogs.length }}</p>
@@ -135,7 +149,7 @@ async function load() {
     blogs.value = await api.listBlogs();
   } catch (e: any) {
     if (e?.message === 'Unauthorized') {
-      router.push('/login');
+      router.push({name: 'admin-login'});
       return;
     }
     error.value = e?.message || 'Failed to load contacts';
@@ -158,6 +172,10 @@ async function remove(b: Blog) {
       console.error('DELETE ERROR:', e);
       alert(e?.message || 'Delete failed');
     }
+}
+function logout() {
+  auth.logout();
+  router.push({name: 'admin-login'});
 }
 onMounted(load);
 

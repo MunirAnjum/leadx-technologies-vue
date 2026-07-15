@@ -109,16 +109,15 @@
           >
             Blogs
           </router-link>
+          <div class="p-4 border-t border-white/10">
+            <button
+              @click="logout"
+              class="w-full text-left rounded-xl hover:bg-white/10 hover:text-brand-red/80 transition"
+            >
+              Logout
+            </button>
+          </div>
         </nav>
-
-        <div class="p-4 border-t border-white/10">
-          <button
-            @click="logout"
-            class="w-full text-left px-4 py-3 rounded-xl hover:bg-white/10 hover:text-brand-red/80 transition"
-          >
-            Logout
-          </button>
-        </div>
       </aside>
     </transition>
 
@@ -179,7 +178,7 @@ function closeSidebar() {
 function logout() {
   auth.logout()
   closeSidebar()
-  router.push('/login')
+  router.push({name:'admin-login'})
 }
 
 watch(
