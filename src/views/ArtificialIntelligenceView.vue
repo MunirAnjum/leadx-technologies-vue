@@ -3,12 +3,7 @@
 
     <!-- HERO -->
     <section class="hero-dark">
-      <!-- <div class="hero-dark__bg">
-        <div class="hero-glow-red"></div>
-        <div class="hero-glow-white"></div>
-        <div class="hero-grid-dots"></div>
-      </div> -->
-      <div class="container-x pt-20 relative z-10">
+      <div class="container-x relative z-10">
         <div class="max-w-4xl mx-auto">
           <div class="eyebrow-dark mb-6">
             <Cpu class="w-4 h-4" /> Artificial Intelligence Solutions

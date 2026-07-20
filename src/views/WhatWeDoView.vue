@@ -3,7 +3,7 @@
 
     <!-- HERO -->
     <section class="hero-dark">
-      <div class="container-x pt-20 relative z-10">
+      <div class="container-x relative z-10">
         <div class="max-w-4xl mx-auto">
           <span class="eyebrow-dark mb-6">
             <Layers class="w-3.5 h-3.5" /> What We Do

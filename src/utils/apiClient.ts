@@ -16,10 +16,11 @@ export interface LoginResponse {
   };
 }
 
-export const authState = ref(!!localStorage.getItem('auth_token'))
-
 const TOKEN_KEY = 'auth_token';
 const USER_KEY = 'auth_user';
+
+export const authState = ref(!!localStorage.getItem('auth_token'))
+
 export const auth = {
   getToken(): string | null {
     return localStorage.getItem(TOKEN_KEY);

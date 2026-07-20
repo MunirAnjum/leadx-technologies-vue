@@ -1,7 +1,7 @@
 <template>
   <div class="page-wrap">
     <!-- HERO -->
-    <section class="relative py-16 lg:py-24 xl:py-28 bg-gradient-to-b from-brand-gray/50 to-white rounded-b-[50px]">
+    <section class="relative py-16 bg-gradient-to-b from-brand-gray/50 to-white rounded-b-[50px]">
       <div class="max-w-7xl mx-auto px-6 relative z-10">
         <div class="max-w-4xl mx-auto">
           <div class="lg:col-span-6 flex mt-28 flex-col items-start gap-6">
